@@ -1,0 +1,288 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    background-color: rgba(252, 255, 255, 0.8);
+}
+
+/* Diaporama */
+
+/*Carroussel*/
+
+#caroussel>div>div>img{
+    width: 100%;
+}
+
+/* Slideshow container */
+.slideshow-container {
+    border-radius: 10px;
+    max-width: 45vw;
+    ;
+    position: relative;
+    margin: auto;
+}
+
+/*bordure des images*/
+#caroussel>div:first-child>div>img {
+    border-radius: 10px;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+    background-color: rgba(255, 0, 128, 0.425);
+}
+
+/* Point d'incation de diapositive */
+
+#caroussel>div:nth-child(2) {
+    margin-bottom: 5px;
+}
+
+.dot {
+    cursor: pointer;
+    height: 8px;
+    width: 8px;
+    margin: 0 2px;
+    background-color: rgba(240, 240, 240, 0.8);
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active,
+.dot:hover {
+    background-color: rgba(255, 0, 128, 0.8);
+}
+
+/* Fading animation */
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+
+    to {
+        opacity: 1
+    }
+}
+
+/* On smaller screens, decrease text size */
+@media only screen and (max-width: 300px) {
+
+    .prev,
+    .next,
+    .text {
+        font-size: 11px
+    }
+}
+
+body>section:nth-of-type(2) {
+    margin-top: 2vh;
+}
+
+
+/* --------------------------------------------------------------------------- */
+/* SECTION */
+
+body>section:nth-of-type(1) {
+    /*
+    background-size: 100%;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    display: flex;
+    flex-flow: column wrap;*/
+    display: none;
+}
+
+body>section>article {
+    margin: 1vh auto 2vh auto;
+    width: 30vw;
+    height: 95%;
+}
+
+body>section>h3 {
+    color: rgba(178, 0, 124, 1);
+    font-weight: bold;
+    font-size: 1.5vw;
+    margin: 2vw auto 0 auto;
+    text-align: justify;
+}
+
+body>section>article>form {
+    height: 75%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+body>section>article>form>div {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin: auto;
+}
+
+body>section>article>form>div>label {
+    color: rgba(178, 0, 124, 1);
+    font-size: 2vw;
+    margin: 2vh auto 1vh auto;
+}
+
+body>section>article>form>div>input {
+    border: 0;
+    font-size: 1.5vw;
+    border-radius: 1vh;
+    color: grey;
+    text-align: center;
+    width: 18vw;
+    margin: auto;
+}
+
+body>section>article>form>input {
+    width: 30%;
+    height: 3vw;
+    font-size: 1.8vw;
+    background-color: rgba(178, 0, 124, 1);
+    color: white;
+    border-radius: 1vw;
+    border: 0;
+    margin: 2vh auto 2vh auto;
+}
+
+body>section>article>form>input:hover {
+    background-color: rgba(252, 255, 255, 0.8);
+    color: rgba(175, 0, 124, 0.7);
+}
+
+/* ---------------------------------------------------------------------------------- */
+/* NAV */
+
+body>nav {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    height: auto;
+    padding-top: 2vh;
+    padding-bottom: 2vh;
+    margin: 0 2vw 2vh 2vw;
+}
+
+body>nav>a {
+    display: flex;
+    flex-flow: column-reverse nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    text-decoration: none;
+    border-collapse: collapse;
+    border-right: solid 0.5px rgba(178, 0, 124, 1);
+    border-bottom: solid 2px rgba(178, 0, 124, 1);
+    border-left: solid 0.5px rgba(178, 0, 124, 1);
+    margin: 0;
+}
+
+body>nav>a:first-of-type {
+    border-left: solid 2px rgba(178, 0, 124, 1);
+}
+
+body>nav>a:last-of-type {
+    border-right: solid 2px rgba(178, 0, 124, 1);
+}
+
+body>nav>a>img {
+    height: 7vw;
+    margin: 1vh auto 2vh auto;
+}
+
+body>nav>a>p {
+    margin: auto auto 2vh auto;
+}
+
+/* -------------------------------------------------------------------------------------- */
+/* MAIN */
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    margin-bottom: 2vw;
+}
+
+main>section>h2 {
+    font-size: 2.3vw;
+    margin: 2vw;
+}
+
+main>section>div {
+    display: inline-flex;
+}
+
+main>section>div>article {
+    width: 32vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+main>section>div>article>img {
+    width: 30vw;
+    height: 20vw;
+    border-radius: 1vw;
+}
+
+main>section>div>article>h3,
+main>section>div>article>p {
+    width: 80%;
+    font-size: 1.6vw;
+    text-align: center;
+    margin: 1vh auto 0.5vh auto;
+}
+
+main>section>div>article>p:first-of-type {
+    text-align: justify;
+}

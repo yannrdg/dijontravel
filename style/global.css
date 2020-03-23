@@ -1,0 +1,164 @@
+/* FORME */
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+/* ------------------------------------------------------------------------------ */
+/* HEADER */
+
+body>header {
+    background-color: rgba(178, 0, 124, 1);
+}
+
+header>div>h1 {
+    text-align: center;
+    font-size: 5vw;
+    font-family: "Adventure";
+    color: white;
+    margin: auto;
+    margin: auto;
+}
+
+header>div:first-of-type>a>img:first-of-type {
+    width: 10vw;
+    height: auto;
+    margin: auto auto auto 2vw;
+}
+
+header>div>div>a:nth-of-type(2) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header>div>div>a:nth-of-type(2)>img {
+    width: 80%;
+    margin: auto 2vw auto auto;
+}
+
+header>div {
+    display: grid;
+    grid-template-columns: 20% 60% 20%;
+}
+
+header>div>div {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    height: auto;
+}
+
+header>div>div>a:nth-of-type(1) {
+    height: 3vw;
+    padding: 5%;
+    width: 10vw;
+    margin: auto;
+    background-color: white;
+    color: rgba(178, 0, 124, 1);
+    font-size: 1.3vw;
+    border-radius: 1rem;
+    text-decoration: none;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+}
+
+header>div>div>a:nth-of-type(1):hover {
+    background-color: rgba(252, 255, 255, 0.8);
+    color: rgba(175, 0, 124, 0.7);
+}
+
+/* --------------------------------------------------------------------------*/
+/* SECTION */
+
+.banniere {
+    background-color: white;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+
+.banniere>h2 {
+    font-size: 4vw;
+    color: rgba(178, 0, 124);
+    font-family: "Adventure";
+    text-align: center;
+    margin: 0;
+}
+
+.banniere>img {
+    margin: 1vw;
+    height: 8vw;
+    width: 8vw;
+}
+
+/* -------------------------------------------------------------------------- */
+/* FOOTER*/
+
+footer {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-content: center;
+    align-items: center;
+    height: auto;
+    margin-top: 1vh;
+    background-color: black;
+    color: white;
+}
+
+footer>div {
+    display: flex;
+    flex-flow: row nowrap;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    align-content: center;
+    margin: 3%;
+    margin: 1vh 0;
+    width: 25%;
+}
+
+footer>div>p {
+    font-size: 2vw;
+}
+
+footer>div>p>a {
+    margin: 4%;
+}
+
+footer>div>p>a>img {
+    width: 4vw;
+}
+
+footer>div>p:last-of-type {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+
+}
+
+footer>div>p,
+a {
+    margin: auto;
+}
+
+footer>div>a {
+    text-decoration: none;
+    color: white;
+}
+
+footer>div>a:hover {
+    color: rgba(175, 0, 124, 0.7);
+}
+
+footer>nav>ul>li>a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+}

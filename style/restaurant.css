@@ -1,0 +1,269 @@
+/* BODY */
+body{
+    background-image: url(https://cdn.glitch.com/0e477c32-76f7-47e1-a071-2405796f3fa5%2Fimagedefond.jpg?v=1575896903037);
+    background-size: 100%;
+    background-attachment: fixed;
+  }
+  
+  /* NAV */
+  
+  body>nav{
+    width: 92vw;
+    margin: auto;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  body>nav>button {
+    width: 20vw;
+    height: 5vw;
+    margin: 2vh 1vw 2vh 1vw;
+    background-color: rgba(178, 0, 124, 1);
+    color: white;
+    text-decoration: none;
+    font-size: 1.8vw;
+    border: none;
+    border-radius: 1vw;
+  }
+  
+  body>nav>button:hover {
+    background-color: rgba(178, 0, 122, 0.7);
+    color: white;
+  }
+  
+  /* MAIN */
+  
+  main {
+    background-color: rgba(255, 255, 255, 0.8);
+    width: 90vw;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-content: center;
+    border-radius: 1rem;
+    padding-bottom: 2.5vw;
+    margin-bottom: 1.5vw;
+  }
+  
+  main>section{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2.5vw 0 0 0;
+    background-color: rgba(255, 255, 255, 1);
+    width: 85vw;
+    border-radius: 1rem;
+    text-align: center;
+  }
+  
+  main>section>img {
+    box-sizing: border-box;
+    margin: 2vw auto 2vw 2vw;
+    width: 40vw;
+    max-width: 45vw;
+    max-height : 30vw;
+    border-radius: 1rem;
+  }
+  
+  main>section>div {
+    display: flex;
+    flex-flow: column nowrap;
+    width: 50vw;
+    margin: auto 5vw;
+  }
+  
+  main>section>div>h3 {
+    font-size: 1.5rem;
+    font-family: "comic sans ms";
+  }
+  
+  main>section>div>p {
+    font-size: 1.2rem;
+    font-family: "comic sans ms";
+    margin: 1%;
+  }
+  
+  main>section>div>p:first-of-type {
+    margin-bottom: 3vh;
+    font-size: 1rem;
+  }
+  
+  main>section>div>p:last-of-type {
+    margin-top: 3vh;
+    font-style: italic;
+  }
+  
+  main>section>div>a {
+    color: black;
+    margin: 0;
+    text-decoration: none;
+    color: rgba(178, 0, 124, 1);
+    text-align: center;
+    font-size: 1.2rem;
+  }
+  
+  main>section>div>a:hover {
+    color: rgba(168, 0, 114, 0.7);
+  }
+  
+  /* VERSION SMARTPHONE 
+  
+  @media (max-width: 1000px) {
+    header>div>h1{
+      margin: 0; padding: 0;
+      font-size: 12vw;
+    }
+    header>div>a>img{
+      width: 20vw;
+      height: 20vw;
+    }
+    
+    section>img{
+      width: 15vw;
+      height: 15vw;
+    }
+    section>h2{
+      font-size: 13vw;
+      padding: 2vw 0 2vw 0;
+    }
+    
+    nav{
+      padding: 0;
+      height: 27vw;
+      display: flex;
+    }
+    nav>form{
+      display: flex;
+      height: 100%;
+      flex-direction: column;
+      justify-content: space-evenly;
+      padding: auto;
+    }
+    nav>form>div:nth-of-type(1), nav>form>div:nth-of-type(2), nav>form>div:nth-of-type(3){
+      width: 80%;
+      margin: auto;
+    }
+    nav>form>div>p{
+      text-align: center;
+      width: 30%;
+      font-size: 4vw;
+    }
+    nav>form>div:nth-of-type(1)>input, nav>form>div:nth-of-type(2)>input{
+      width: 60%;
+      height: 3.5vw;
+    }
+    nav>form>div:nth-of-type(3){
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 5vw;
+      padding-bottom: 1vw;
+    }
+    nav>form>div:nth-of-type(3)>input{
+      width: 50vw;
+      height: 100%;
+      font-size: 3.5vw;
+      border-radius: 2vw;
+    }
+    
+    main{
+    background-image: url(https://cdn.glitch.com/0e477c32-76f7-47e1-a071-2405796f3fa5%2Fimagedefond.jpg?v=1575896903037);
+    background-size: 100%;
+    background-attachment: fixed;
+    }
+    main>section:nth-of-type(1){
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 2vw auto 2vw auto;
+    }
+    main>section:nth-of-type(1)>div{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 70vw;
+    }
+    main>section:nth-of-type(1)>div:nth-of-type(2){
+      margin-top: 3vw; 
+    }
+    main>section:nth-of-type(1)>div>h2{
+      font-size: 6vw;
+      padding: 0 7vw 0 7vw;
+    }
+    main>section:nth-of-type(1)>div>div{
+      width: 100%;
+    }
+    main>section:nth-of-type(1)>div>div>p{
+      margin: 2vw 3vw 0 3vw;
+      font-size: 3vw;
+    }
+    main>section:nth-of-type(1)>div>div>a>img{
+      width: 64vw;
+      height: 35vw;
+    }
+    
+    
+    main>section:nth-of-type(2){
+      padding-top: 1vw;
+    }
+    main>section:nth-of-type(2)>form{
+      height: 45vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+    }
+    main>section:nth-of-type(2)>form>div{
+      display: flex;
+      flex-direction: column;
+      font-size: 3vw;
+      justify-content: center;
+    }
+    main>section:nth-of-type(2)>form>div:nth-of-type(1){
+      height: 12vw;
+    }
+    main>section:nth-of-type(2)>form>div:nth-of-type(2){
+      height: 11vw;
+    }
+    main>section:nth-of-type(2)>form>div:nth-of-type(3){
+      height: 18vw;
+    }
+    
+    main>section:nth-of-type(2)>form>div>p{
+      padding: 1vw 0 1vw 0;
+      display: inline-flex;
+      align-items: center;
+    }
+    main>section:nth-of-type(2)>form>div>p>label{
+      font-size: 3.5vw;
+    }
+    main>section:nth-of-type(2)>form>div:nth-of-type(2)>p:nth-of-type(1)>input{
+      height: 2vw;
+      width: 30vw;
+    }
+    main>section:nth-of-type(2)>form>div:nth-of-type(2)>p:nth-of-type(2)>input{
+      height: 2.1vw;
+      width: 30vw;
+    }
+    main>section:nth-of-type(2)>form>div:nth-of-type(3)>p:nth-of-type(1)>input{
+      height: 2.1vw;
+      width: 30vw;
+    }
+    main>section:nth-of-type(2)>form>div:nth-of-type(3)>p:nth-of-type(2)>input{
+      height: 4vw;
+      width: 30vw;
+    }
+    main>section:nth-of-type(2)>form>div:nth-of-type(1)>p{
+      font-size: 4vw;
+      text-align: center;
+      margin: 1.5vw 2vw 1vw 2vw;
+    }
+    main>section:nth-of-type(2)>form>div:nth-of-type(3)>p:nth-of-type(3)>input{
+      width: 25vw;
+      height: 5vw;
+      font-size: 2.2vw;
+    }
+  }*/
