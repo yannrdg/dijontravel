@@ -1,9 +1,10 @@
 <?php 
+include '../php/config.php';
 
-$bdd = new PDO("mysql:host=localhost;dbname=dijontravel", 'root', 'root');
+$bdd = new PDO("mysql:host=$hostname;dbname=dijontravel", $username, $password);
 $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-$info = $bdd->prepare("SELECT * FROM logement");
+$info = $bdd->prepare("SELECT * FROM Logement");
 $exec = $info->execute();
 $logement = $info->fetchAll();
 
