@@ -12,13 +12,13 @@
 <body>
     <header>
         <div>
-            <a href="index.html">
+            <a href="index.php">
                 <img src="https://cdn.glitch.com/0e477c32-76f7-47e1-a071-2405796f3fa5%2Flogooo.png?v=1575622630122"
                     alt="logo principal"></a>
             <h1>DIJ'ON TRAVEL</h1>
             <div>
-                <a href="html/formulaire.html">Inscrivez-vous</a>
-                <a href="html/pageprofil.html"><img
+                <a href="php/formulaire.php">Inscrivez-vous</a>
+                <a href="php/connexion.php"><img
                         src="https://cdn.glitch.com/0e477c32-76f7-47e1-a071-2405796f3fa5%2Fprofil.png?v=1575622638108"
                         alt="profil"></a>
             </div>
@@ -84,12 +84,12 @@
             <img src="https://cdn.glitch.com/0e477c32-76f7-47e1-a071-2405796f3fa5%2Fmap.png?v=1575882153523" alt="map">
             <p>Carte</p>
         </a>
-        <a href="html/restaurant.html">
+        <a href="php/restaurant.php">
             <img src="https://cdn.glitch.com/0e477c32-76f7-47e1-a071-2405796f3fa5%2Frestau.png?v=1575882186705"
                 alt="logo restau">
             <p>Restaurants</p>
         </a>
-        <a href="php/activites.html">
+        <a href="php/activites.php">
             <img src="https://cdn.glitch.com/0e477c32-76f7-47e1-a071-2405796f3fa5%2Fkayak.png?v=1575882144385"
                 alt="logo kayak">
             <p>Activités</p>

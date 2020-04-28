@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -19,23 +19,17 @@
             <label for="lieu"></label>Adresse :<input type="text" name="lieu" id="lieu">
         </div>
         <div>
-            <label for="prix"></label>Prix pas pers/nuit :<input type="texte" name="prix" id="prix">
+            <label for="description"></label>Description <i>(350 caractères maximum (espaces compris))</i> :<input type="texte" maxlength="350" name="description" id="description">
         </div>
         <div>
-            <label for="nbrpers"></label>Nombre de personnes :<input type="number" name="nbrpers" id="nbrpers">
-        </div>
-        <div>
-            <label for="contact"></label>Contact :<input type="text" name="contact" id="contact">
-        </div>
-        <div>
-            <label for="lien"></label>Lien pour réserver :<input type="text" name="lien" id="lien">
+            <label for="site"></label>Site web de l'activité :<input type="texte" name="site" id="site">
         </div>
         <div>
             <label for="type">Catégorie :</label><select name="type" id="type">
-                <option value="camping">Camping</option>
-                <option value="gite">Gîte</option>
-                <option value="chbrehote">Chambre d'hôte</option>
-                <option value="hotel">Hôtel</option>
+                <option value="sport">Sport</option>
+                <option value="visite">Visites</option>
+                <option value="lieuouv">Lieux ouverts</option>
+                <option value="fete">Fêtes</option>
 
             </select>
         </div>
@@ -46,52 +40,49 @@
 </body>
 
 </html>
+
 <?php
 
 include 'config.php';
-//On se connecte à la BDD
-$bdd = new PDO("mysql:host=$hostname;dbname=$dbname", $username, $password);
-$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     
     $titre = $_POST['titre'];
     $lieu = $_POST['lieu'];
-    $prix = $_POST['prix'];
-    $nbrpers = $_POST['nbrpers'];
-    $lien = $_POST['lien'];
-    $contact = $_POST['contact'];
+    $description = $_POST['description'];
+    $site = $_POST['site'];
     $type = $_POST['type'];
 
     
     try{
 
-        if ($type === 'camping'){
+        if ($type === 'sport'){
             $categorie = "un";
-        } elseif ($type === 'gite') {
+        } elseif ($type === 'visite') {
             $categorie = "deux";
-        } elseif ($type === 'chbrehote') {
+        } elseif ($type === 'lieuouv') {
             $categorie = "trois";
-        } elseif ($type === 'hotel') {
+        } elseif ($type === 'fete') {
             $categorie = "quatre";
         }
             
 
+        //On se connecte à la BDD
+        $bdd = new PDO("mysql:host=$hostname;dbname=$dbname", $username, $password);
+        $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
          //On insère les données reçues
         $sth = $bdd->prepare("
-            INSERT INTO Logement(titre, lieu, prix, nbrpers, lien, contact, type)
-            VALUES(:titre, :lieu, :prix, :nbrpers, :lien, :contact, :type)");  
+            INSERT INTO Activites(titre, lieu, description, site, type)
+            VALUES(:titre, :lieu, :description, :site, :type)");  
         $sth->bindParam(':titre',$titre);
         $sth->bindParam(':lieu',$lieu);
-        $sth->bindParam(':prix',$prix);
-        $sth->bindParam(':nbrpers',$nbrpers);
-        $sth->bindParam(':lien',$lien);
-        $sth->bindParam(':contact',$contact);
+        $sth->bindParam(':description',$description);
+        $sth->bindParam(':site',$site);
         $sth->bindParam(':type',$categorie);
         $sth->execute();
         
         //On renvoie l'utilisateur vers la page de remerciement
-       header('Location: logement.php');
+       header('Location: activites.php');
 
 
     }

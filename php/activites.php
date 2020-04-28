@@ -5,9 +5,9 @@ include 'config.php';
 $bdd = new PDO("mysql:host=$hostname;dbname=$dbname", $username, $password);
 $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-$info = $bdd->prepare("SELECT * FROM Logement");
+$info = $bdd->prepare("SELECT * FROM Activites");
 $exec = $info->execute();
-$logement = $info->fetchAll();
+$activites = $info->fetchAll();
 
 ?>
 
@@ -24,7 +24,7 @@ $logement = $info->fetchAll();
     <script src="../script/global.js" async></script>
 </head>
 
-<body id="logement">
+<body id="activites">
 <header>
         <div>
             <a href="../index.php">
@@ -43,29 +43,27 @@ $logement = $info->fetchAll();
     <section class="banniere">
         <img src="https://cdn.glitch.com/0e477c32-76f7-47e1-a071-2405796f3fa5%2Flogemetn.png?v=1575622625201"
             alt="logo logement">
-        <h2>Logements</h2>
+        <h2>Activites</h2>
     </section>
 
     <nav>
-        <button>Campings</button>
-        <button>Gîtes</button>
-        <button>Chambres d'hôte</button>
-        <button>Hôtels</button>
+        <button>Sport</button>
+        <button>Visites</button>
+        <button>Lieux ouverts</button>
+        <button>Fêtes</button>
         <button>Tous</button>
     </nav>
-    <a href="logementajout.php">+ Ajouter une annonce</a>
+    <a href="activitesajout.php">+ Ajouter une annonce</a>
     <main>
-            <?php foreach ($logement as $items): ?>  
+            <?php foreach ($activites as $items): ?>  
                 <section class="<?= $items['type']?>">
             <div>
                 <h3><?= $items['titre']?></h3>
                 <p><?= $items['lieu']?></p>
-                <p>Prix : <?= $items['prix']?>€ la nuit/pers</p>
-                <p><?= $items['nbrpers']?> personnes</p>
-                <p>Pour plus d'informations ou pour réserver :</p>
-                <p><?= $items['contact']?></p>
+                <p><?= $items['description']?></p>
                 <br />
-                <a href="<?= $items['lien']?>"><?= $items['lien']?></a>
+                <p>Pour plus d'informations ou pour réserver :</p>
+                <a href="<?= $items['site']?>"><?= $items['site']?></a>
             </div>
             <img src="https://cdn.glitch.com/0e477c32-76f7-47e1-a071-2405796f3fa5%2Fgites%20lilas.jpg?v=1578835905477"
                 alt="gites">

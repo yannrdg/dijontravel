@@ -1,3 +1,14 @@
+
+<?php
+session_start();
+include 'config.php';
+
+$bdd = new PDO("mysql:host=$hostname;dbname=$dbname", $username, $password);
+
+if(isset($_SESSION['prenom']))
+{
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -32,39 +43,20 @@
                 alt="page profil"></div>
         <div>
             <p>Nom/Prénom</p>
-            <p><strong>DUPONT Jean</strong></p>
-        </div>
-        <div>
-            <p>Numéro de téléphone</p>
-            <p><strong>07.01.02.03.04</strong></p>
+            <p><strong><?php echo $_SESSION["nom"] . $_SESSION["prenom"];?></strong></p>
         </div>
         <div><input type="button" value="Modifier"></div>
-        <div>
-            <p>Sexe</p>
-            <p><strong>Masculin</strong></p>
-        </div>
-        <div>
-            <p>Date de naissance</p>
-            <p><strong>12 / 10 / 1999</strong></p>
-        </div>
         <div><img
                 src="https://cdn.glitch.com/0e477c32-76f7-47e1-a071-2405796f3fa5%2F3f1b1cad-4623-4c10-89d8-bb7fe2389449.image.png?v=1578765611890"
                 alt="maison"></div>
-        <div>
-            <p>Adresse</p>
-            <p><strong>N° de rue + Nom de rue</strong></p>
-        </div>
-        <div>
-            <p>Code postal</p>
-            <p><strong>21000</strong></p>
-        </div>
+
         <div><input type="button" value="Modifier"></div>
         <div><img
                 src="https://cdn.glitch.com/0e477c32-76f7-47e1-a071-2405796f3fa5%2Fa5b38009-0b42-4bc4-8749-ab0e36c345ac.image.png?v=1578765576218"
                 alt="arobase"></div>
         <div>
             <p>Votre adresse mail</p>
-            <p><strong>dupont.jean@gmail.com</strong></p>
+            <p><strong><?php echo $_SESSION["email"]; ?></strong></p>
         </div>
         <div><input type="button" value="Modifier votre adresse mail"></div>
         <div><img
@@ -72,7 +64,7 @@
                 alt="cadenas"></div>
         <div>
             <p>Votre mot de passe</p>
-            <p><strong>*********</strong></p>
+            <p><strong><?php echo $_SESSION["mdp"]; ?></strong></p>
         </div>
         <div><input type="button" value="Modifier votre mot de passe"></div>
     </main>
@@ -98,3 +90,82 @@
 </body>
 
 </html>
+
+<?php
+}
+else
+{
+    ?><!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="yann" content="autho">
+    <title>Connexion</title>
+</head>
+
+<body>
+    <main>
+        <section>
+            <h1>S'identifier</h1>
+
+            <form action="" method="POST">
+                <div>
+                    <label for="emailconnect">Votre e-mail</label>
+                    <input type="email" id="emailconnect" name="emailconnect">
+                </div>
+                <div>
+                    <label for="mdpconnect">Votre mot de passe</label>
+                    <input type="password" id="mdpconnect" name="mdpconnect">
+                </div>
+                <div id="submit">
+                    <input type="submit" value="Connexion" name="formconnect">
+                </div>
+                <p><?php
+                if(isset($erreur))
+                {
+                    echo $erreur;
+                }
+                ?></p>
+            </form>
+            <a href="formulaire.php">Première connexion</a>
+        </section>
+        <a href="../index.php">Accueil</a>
+    </main>
+</body>
+
+</html>
+    <?php
+    include 'config.php';
+
+    $bdd = new PDO("mysql:host=$hostname;dbname=$dbname", $username, $password);
+    
+    if(isset($_POST['formconnect']))
+    {
+        $emailconnnect = htmlspecialchars($_POST['emailconnect']);
+        $mdpconnnect = $_POST['mdpconnect'];
+        if(!empty($mailconnnect) AND !empty($mdpconnnect))
+        {
+            $requser = $bdd->prepare("SELECT * FROM visiteur WHERE email = ? AND mdp = ?");
+            $requser->execute(array($emailconnnect, $mdpconnnect));
+            $userexist = $requser->rowCount();
+            if($userexist == 1)
+            {
+                $userinfo = $requser->fetch();
+                $_SESSION['email'] = $userinfo['email'];
+                $_SESSION['nom'] = $userinfo['nom'];
+                $_SESSION['prenom'] = $userinfo['prenom'];
+                header("Location: logement.php");
+            }
+            else 
+            {
+                $erreur = "Mauvais identifiants";
+            }
+        } 
+        else 
+        {
+            $erreur = "Tout les champs doivent être complétés";
+        }
+    }
+}    
+?>

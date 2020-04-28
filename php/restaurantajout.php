@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -32,10 +32,10 @@
         </div>
         <div>
             <label for="type">Catégorie :</label><select name="type" id="type">
-                <option value="camping">Camping</option>
-                <option value="gite">Gîte</option>
-                <option value="chbrehote">Chambre d'hôte</option>
-                <option value="hotel">Hôtel</option>
+                <option value="kebab">Kebab</option>
+                <option value="pizzeria">Pizzeria</option>
+                <option value="resto">Restaurant d'hôte</option>
+                <option value="brasserie">Brasserie</option>
 
             </select>
         </div>
@@ -46,12 +46,10 @@
 </body>
 
 </html>
+
 <?php
 
 include 'config.php';
-//On se connecte à la BDD
-$bdd = new PDO("mysql:host=$hostname;dbname=$dbname", $username, $password);
-$bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     
     $titre = $_POST['titre'];
@@ -65,21 +63,24 @@ $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     
     try{
 
-        if ($type === 'camping'){
+        if ($type === 'kebab'){
             $categorie = "un";
-        } elseif ($type === 'gite') {
+        } elseif ($type === 'pizzeria') {
             $categorie = "deux";
-        } elseif ($type === 'chbrehote') {
+        } elseif ($type === 'resto') {
             $categorie = "trois";
-        } elseif ($type === 'hotel') {
+        } elseif ($type === 'brasserie') {
             $categorie = "quatre";
         }
             
 
+        //On se connecte à la BDD
+        $bdd = new PDO("mysql:host=$hostname;dbname=$dbname", $username, $password);
+        $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
          //On insère les données reçues
         $sth = $bdd->prepare("
-            INSERT INTO Logement(titre, lieu, prix, nbrpers, lien, contact, type)
+            INSERT INTO Restaurant(titre, lieu, prix, nbrpers, lien, contact, type)
             VALUES(:titre, :lieu, :prix, :nbrpers, :lien, :contact, :type)");  
         $sth->bindParam(':titre',$titre);
         $sth->bindParam(':lieu',$lieu);
@@ -91,7 +92,7 @@ $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $sth->execute();
         
         //On renvoie l'utilisateur vers la page de remerciement
-       header('Location: logement.php');
+       header('Location: restaurant.php');
 
 
     }

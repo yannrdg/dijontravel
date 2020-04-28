@@ -5,9 +5,9 @@ include 'config.php';
 $bdd = new PDO("mysql:host=$hostname;dbname=$dbname", $username, $password);
 $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-$info = $bdd->prepare("SELECT * FROM Logement");
+$info = $bdd->prepare("SELECT * FROM Restaurant");
 $exec = $info->execute();
-$logement = $info->fetchAll();
+$restaurant = $info->fetchAll();
 
 ?>
 
@@ -16,15 +16,15 @@ $logement = $info->fetchAll();
 
 <head>
     <meta charset="UTF-8">
-    <meta name="Yann" content="author">
+    <meta name="author" content="BELIN Anthony">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Logements</title>
+    <title>Restauration</title>
     <link rel="stylesheet" href="../style/global.css">
     <link rel="stylesheet" href="../style/categories.css">
     <script src="../script/global.js" async></script>
 </head>
 
-<body id="logement">
+<body id="restaurant">
 <header>
         <div>
             <a href="../index.php">
@@ -41,21 +41,20 @@ $logement = $info->fetchAll();
     </header>
 
     <section class="banniere">
-        <img src="https://cdn.glitch.com/0e477c32-76f7-47e1-a071-2405796f3fa5%2Flogemetn.png?v=1575622625201"
+        <img src="https://cdn.glitch.com/0e477c32-76f7-47e1-a071-2405796f3fa5%2Frestau.png?v=1575882186705"
             alt="logo logement">
-        <h2>Logements</h2>
+        <h2>Restauration</h2>
     </section>
-
     <nav>
-        <button>Campings</button>
-        <button>Gîtes</button>
-        <button>Chambres d'hôte</button>
-        <button>Hôtels</button>
+        <button>Kebabs Tacos</button>
+        <button>Pizzerias</button>
+        <button>Restaurants</button>
+        <button>Brasseries</button>
         <button>Tous</button>
     </nav>
-    <a href="logementajout.php">+ Ajouter une annonce</a>
+    <a href="restaurantajout.php">+ Ajouter une annonce</a>
     <main>
-            <?php foreach ($logement as $items): ?>  
+            <?php foreach ($restaurant as $items): ?>  
                 <section class="<?= $items['type']?>">
             <div>
                 <h3><?= $items['titre']?></h3>
@@ -81,8 +80,7 @@ $logement = $info->fetchAll();
         </div>
         <div>
             <p>Réseaux sociaux</p>
-            <p>
-                <a href="https://twitter.com/"><img
+            <p><a href="https://twitter.com/"><img
                         src="https://cdn.glitch.com/0e477c32-76f7-47e1-a071-2405796f3fa5%2FTwitterlogo.png?v=1575622650353"
                         alt="Twitter"></a><a href="https://www.snapchat.com/"><img
                         src="https://cdn.glitch.com/0e477c32-76f7-47e1-a071-2405796f3fa5%2FSnapchatlogo.png?v=1575622642844"
