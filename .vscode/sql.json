@@ -1,0 +1,10 @@
+[
+    {"type":"header","version":"4.9.3","comment":"Export to JSON plugin for PHPMyAdmin"},
+    {"type":"database","name":"dijontravel"},
+    {"type":"table","name":"Logement","database":"dijontravel","data":
+    [
+    {"titre":"Camping des ours","lieu":"Place de la rep","prix":"30","nbrpers":"2","lien":"","contact":"09.09.09.87.98","type":"un"},
+    {"titre":"Hotel","lieu":"place","prix":"2","nbrpers":"2","lien":"lkjhgf","contact":"2","type":"quatre"}
+    ]
+    }
+    ]
