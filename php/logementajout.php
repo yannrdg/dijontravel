@@ -1,6 +1,7 @@
 <?php
 
-    include '../php/config.php';
+include 'config.php';
+
     
     $titre = $_POST['titre'];
     $lieu = $_POST['lieu'];
@@ -25,7 +26,7 @@
             
 
         //On se connecte à la BDD
-        $bdd = new PDO("mysql:host=$hostname;dbname=dijontravel", $username, $password);
+        $bdd = new PDO("mysql:host=$hostname;dbname=$dbname", $username, $password);
         $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
          //On insère les données reçues

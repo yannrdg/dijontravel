@@ -1,7 +1,8 @@
 <?php 
-include '../php/config.php';
 
-$bdd = new PDO("mysql:host=$hostname;dbname=dijontravel", $username, $password);
+include 'config.php';
+
+$bdd = new PDO("mysql:host=$hostname;dbname=$dbname", $username, $password);
 $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 $info = $bdd->prepare("SELECT * FROM Logement");
@@ -58,7 +59,7 @@ $logement = $info->fetchAll();
         <button>Hôtels</button>
         <button>Tous</button>
     </nav>
-    <a href="./ajoutlogement.html">+ Ajouter une annonce</a>
+    <a href="../html/ajoutlogement.html">+ Ajouter une annonce</a>
     <main>
             <?php foreach ($logement as $items): ?>  
                 <section class="<?= $items['type']?>">
