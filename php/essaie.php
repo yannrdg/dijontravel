@@ -4,9 +4,6 @@ include 'config.php';
 
 $bdd = new PDO("mysql:host=$hostname;dbname=$dbname", $username, $password);
 
-if(isset($_SESSION['prenom']))
-{
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -16,9 +13,22 @@ if(isset($_SESSION['prenom']))
     <title>Document</title>
 </head>
 <body>
-    <p>Profil de <?php echo $_SESSION["prenom"]; ?></p>
+    <p>Profil de 
+        <?php
+        if(isset($_SESSION['prenom']))
+        {
+        ?>
+        <p>bonjour</p>
+        <?php 
+        }
+        else 
+        {
+        ?>
+            <p>salut</p>
+        <?php 
+        }
+        ?>
+    </p>
+    <a href="../index.php">Page ac</a>
 </body>
 </html>
-
-<?php
-}
