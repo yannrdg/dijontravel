@@ -18,7 +18,7 @@ if(isset($_POST['formconnect']))
             $userinfo = $requser->fetch();
             $_SESSION['prenom'] = $userinfo['prenom'];
             $_SESSION['email'] = $userinfo['email'];
-            $erreur = "ok";
+            header('Location: essaie.php');
         }
         else 
         {

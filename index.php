@@ -17,8 +17,9 @@
                     alt="logo principal"></a>
             <h1>DIJ'ON TRAVEL</h1>
             <div>
+                <a href="deconnexion.php">deconnexion</a>
                 <a href="php/formulaire.php">Inscrivez-vous</a>
-                <a href="php/connexion.php"><img
+                <a href="php/essaie.php"><img
                         src="https://cdn.glitch.com/0e477c32-76f7-47e1-a071-2405796f3fa5%2Fprofil.png?v=1575622638108"
                         alt="profil"></a>
             </div>
