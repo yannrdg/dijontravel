@@ -18,7 +18,7 @@ if(isset($_POST['formconnect']))
             $userinfo = $requser->fetch();
             $_SESSION['prenom'] = $userinfo['prenom'];
             $_SESSION['email'] = $userinfo['email'];
-            header('Location: essaie.php');
+            header('Location: ../index.php');
         }
         else 
         {

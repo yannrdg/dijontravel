@@ -11,13 +11,17 @@ body>header {
     background-color: rgba(178, 0, 124, 1);
 }
 
+header>div {
+    display: flex;
+    flex-flow: row nowrap;
+}
+
 header>div>h1 {
     text-align: center;
     font-size: 5vw;
     font-family: "Adventure";
     color: white;
-    margin: auto;
-    margin: auto;
+    margin: auto 10vw auto auto;
 }
 
 header>div:first-of-type>a>img:first-of-type {
@@ -30,22 +34,20 @@ header>div:first-of-type>a>img:first-of-type {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 5vw;
+    margin-right: 3vw;
 }
 
 .img>img {
-    width: 80%;
+    width: 100%;
     margin: auto 2vw auto auto;
 }
 
-header>div {
-    display: grid;
-    grid-template-columns: 20% 60% 20%;
-}
+
 
 header>div>div {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    height: auto;
+    display: flex;
+    flex-flow: row nowrap;
 }
 
 .co {
@@ -63,6 +65,7 @@ header>div>div {
     justify-content: center;
     align-items: center;
     font-weight: bold;
+    margin-right: 3vw;
 }
 
 .co:hover {
@@ -144,7 +147,7 @@ footer>div>p:last-of-type {
 }
 
 footer>div>p,
-a {
+footer>div>a {
     margin: auto;
 }
 
