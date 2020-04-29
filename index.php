@@ -1,3 +1,10 @@
+<?php
+session_start();
+include 'php/config.php';
+
+$bdd = new PDO("mysql:host=$hostname;dbname=$dbname", $username, $password);
+
+?>
 <!DOCTYPE html>
 <html lang="fr" dir="ltr">
 
@@ -17,11 +24,25 @@
                     alt="logo principal"></a>
             <h1>DIJ'ON TRAVEL</h1>
             <div>
-                <a href="php/formulaire.php">Inscrivez-vous</a>
-                <a href="php/connexion.php"><img
+            <?php
+        if(isset($_SESSION['prenom']))
+        {
+        ?>
+        <a href="php/deconnexion.php" class="co">deconnexion</a>
+        <a href="php/essaie.php" class="img"><img
                         src="https://cdn.glitch.com/0e477c32-76f7-47e1-a071-2405796f3fa5%2Fprofil.png?v=1575622638108"
                         alt="profil"></a>
-            </div>
+        <?php 
+        }
+        else 
+        {
+        ?>
+            <a href="php/connexion.php" class="co">connexion</a>
+            <a href="php/formulaire.php" class="co">Inscrivez-vous</a>
+        <?php 
+        }
+        ?> 
+            </div>     
         </div>
     </header>
     <section>
