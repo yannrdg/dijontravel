@@ -13,22 +13,22 @@
 
     <form action="" method="POST">
         <div>
-            <label for="titre"></label>Titre :<input type="text" name="titre" id="titre">
+            <label for="titre">Titre :</label><input type="text" name="titre" id="titre">
         </div>
         <div>
-            <label for="lieu"></label>Adresse :<input type="text" name="lieu" id="lieu">
+            <label for="lieu">Adresse :</label><input type="text" name="lieu" id="lieu">
         </div>
         <div>
-            <label for="prix"></label>Prix pas pers/nuit :<input type="texte" name="prix" id="prix">
+            <label for="prix">Prix pas pers/nuit :</label><input type="texte" name="prix" id="prix">
         </div>
         <div>
-            <label for="nbrpers"></label>Nombre de personnes :<input type="number" name="nbrpers" id="nbrpers">
+            <label for="nbrpers">Nombre de personnes :</label><input type="number" name="nbrpers" id="nbrpers">
         </div>
         <div>
-            <label for="contact"></label>Contact :<input type="text" name="contact" id="contact">
+            <label for="contact">Contact :</label><input type="text" name="contact" id="contact">
         </div>
         <div>
-            <label for="lien"></label>Lien pour réserver :<input type="text" name="lien" id="lien">
+            <label for="lien">Lien pour réserver :</label><input type="text" name="lien" id="lien">
         </div>
         <div>
             <label for="type">Catégorie :</label><select name="type" id="type">

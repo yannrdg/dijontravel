@@ -5,44 +5,76 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="index.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="../style/global.css">
+    <title>Ajout</title>
+    <link rel="stylesheet" href="../style/formulaireajout.css">
 </head>
 
 <body>
-    <h1>Formulaire HTML</h1>
+<header>
+        <div>
+        <a href="../index.php">
+                <img src="https://cdn.glitch.com/0e477c32-76f7-47e1-a071-2405796f3fa5%2Flogooo.png?v=1575622630122"
+                    alt="logo principal"></a>
+            <h1>DIJ'ON TRAVEL</h1>
+            <div>
+            <?php
+        if(isset($_SESSION['prenom']))
+        {
+        ?>
+        <a href="deconnexion.php" class="co">Déconnexion</a>
+        <a href="profil.php" class="img"><img
+                        src="https://cdn.glitch.com/0e477c32-76f7-47e1-a071-2405796f3fa5%2Fprofil.png?v=1575622638108"
+                        alt="profil"></a>
+        <?php 
+        }
+        else 
+        {
+        ?>
+            <a href="connexion.php" class="co">Connexion</a>
+            <a href="inscription.php" class="co">Inscrivez-vous</a>
+        <?php 
+        }
+        ?> 
+            </div>     
+        </div>
+    </header>
+    <main>
+        <h1>Formulaire restaurant</h1>
 
-    <form action="" method="POST">
-        <div>
-            <label for="titre"></label>Titre :<input type="text" name="titre" id="titre">
-        </div>
-        <div>
-            <label for="lieu"></label>Adresse :<input type="text" name="lieu" id="lieu">
-        </div>
-        <div>
-            <label for="prix"></label>Prix pas pers/nuit :<input type="texte" name="prix" id="prix">
-        </div>
-        <div>
-            <label for="nbrpers"></label>Nombre de personnes :<input type="number" name="nbrpers" id="nbrpers">
-        </div>
-        <div>
-            <label for="contact"></label>Contact :<input type="text" name="contact" id="contact">
-        </div>
-        <div>
-            <label for="lien"></label>Lien pour réserver :<input type="text" name="lien" id="lien">
-        </div>
-        <div>
-            <label for="type">Catégorie :</label><select name="type" id="type">
-                <option value="kebab">Kebab</option>
-                <option value="pizzeria">Pizzeria</option>
-                <option value="resto">Restaurant d'hôte</option>
-                <option value="brasserie">Brasserie</option>
+        <form action="" method="POST">
+            <div>
+                <label for="titre">Titre :</label><input type="text" name="titre" id="titre">
+            </div>
+            <div>
+                <label for="lieu">Adresse :</label><input type="text" name="lieu" id="lieu">
+            </div>
+            <div>
+                <label for="prix">Prix pas pers/nuit :</label><input type="texte" name="prix" id="prix">
+            </div>
+            <div>
+                <label for="nbrpers">Nombre de personnes :</label><input type="number" name="nbrpers" id="nbrpers">
+            </div>
+            <div>
+                <label for="contact">Contact :</label><input type="text" name="contact" id="contact">
+            </div>
+            <div>
+                <label for="lien">Lien pour réserver :</label><input type="text" name="lien" id="lien">
+            </div>
+            <div>
+                <label for="type">Catégorie :</label><select name="type" id="type">
+                    <option value="kebab">Kebab</option>
+                    <option value="pizzeria">Pizzeria</option>
+                    <option value="resto">Restaurant d'hôte</option>
+                    <option value="brasserie">Brasserie</option>
 
-            </select>
-        </div>
-        <div id="submit">
-            <input type="submit" value="Envoyer" name="submit">
-        </div>
-    </form>
+                </select>
+            </div>
+            <div id="submit">
+                <input type="submit" value="Envoyer" name="submit">
+            </div>
+        </form>
+    </main>
 </body>
 
 </html>

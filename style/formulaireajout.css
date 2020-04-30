@@ -1,64 +1,57 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
 body{
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-    justify-content: space-between;
-    background-image: url(https://cdn.glitch.com/0e477c32-76f7-47e1-a071-2405796f3fa5%2F56453891-62C5-4F66-9F7B-811350F408B8_1_105_c.jpeg?v=1575622614689);
-    background-attachment: fixed;
-    background-size: 100%;
+    background-image: url(../medias/place_de_la_lib.jpg);
 }
 
 main{
+    width: 60%;
     margin: 0 auto;
+    height: 40vw;
+    background-color: rgba(255, 255, 255, 0.8);
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
-    background-color: rgba(178, 0, 124, 1);
-    border-radius: 1vw;
+    justify-content: space-between;
+    border-radius: 2vw;
 }
+
 main>h1{
-    text-align: center;
-    color: white;
-    font-size: 2.5vw;
-    margin: 1vw 5vw;
+    margin: 2vw 0;
 }
 
 main>form{
-    width: 80%;
-    height: 40vh;
+    height: 80%;
+    width: 60%;
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: space-evenly;
 }
 
 main>form>div{
-    width: 100%;
     display: inline-flex;
     justify-content: space-between;
 }
 
-main>form>div>label{
-    font-size: 1.5vw;
-    color: white;
-}
-
-main>form>div>input{
-    width: 18vw;
-    border: 0;
-}
-
-main>form>div:nth-of-type(7)>select{
-    width: 18vw;
-    border: 0;
-    font-size: 1vw;
+main>form>div:last-of-type{
+    justify-content: center;
 }
 
 main>form>div:last-of-type>input{
-    margin: auto;
+    border: 0.2vw rgba(178, 0, 124, 1) solid ;
     border-radius: 1vw;
+    height: 3vw;
+    width: 12vw;
     color: rgba(178, 0, 124, 1);
+    font-size: 1.8vw;
     font-weight: bold;
-    font-size: 1.3vw;
+}
+
+main>form>div:last-of-type>input:hover{
+    background-color: rgba(255, 255, 255, 0.7);
+    color: rgba(178, 0, 124, 0.7);
+    border: 0.15vw rgba(178, 0, 124, 0.7) solid ;
 }

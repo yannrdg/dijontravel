@@ -19,7 +19,7 @@ $bdd = new PDO("mysql:host=$hostname;dbname=$dbname", $username, $password);
 <body>
     <header>
         <div>
-            <a href="index.html">
+            <a href="index.php">
                 <img src="https://cdn.glitch.com/0e477c32-76f7-47e1-a071-2405796f3fa5%2Flogooo.png?v=1575622630122"
                     alt="logo principal"></a>
             <h1>DIJ'ON TRAVEL</h1>
@@ -29,7 +29,7 @@ $bdd = new PDO("mysql:host=$hostname;dbname=$dbname", $username, $password);
         {
         ?>
         <a href="php/deconnexion.php" class="co">Déconnexion</a>
-        <a href="php/essaie.php" class="img"><img
+        <a href="php/profil.php" class="img"><img
                         src="https://cdn.glitch.com/0e477c32-76f7-47e1-a071-2405796f3fa5%2Fprofil.png?v=1575622638108"
                         alt="profil"></a>
         <?php 
@@ -38,31 +38,13 @@ $bdd = new PDO("mysql:host=$hostname;dbname=$dbname", $username, $password);
         {
         ?>
             <a href="php/connexion.php" class="co">Connexion</a>
-            <a href="php/formulaire.php" class="co">Inscrivez-vous</a>
+            <a href="php/inscription.php" class="co">Inscrivez-vous</a>
         <?php 
         }
         ?> 
             </div>     
         </div>
     </header>
-    <section>
-        <h3>Trouver des logements, des activités et encore plus sur DIJ'ON TRAVEL. Venez découvrir notre ville !</h3>
-            <form>
-                <div>
-                    <label for="arrivée">Arrivée</label>
-                    <input type="date" name="arrivée" id="arrivée" placeholder="jj/mm/aaaa">
-                </div>
-                <div>
-                    <label for="départ">Départ</label>
-                    <input type="date" name="départ" id="départ" placeholder="jj/mm/aaaa">
-                </div>
-                <div>
-                    <label for="budget">Budget</label>
-                    <input type="text" name="budget" id="budget" placeholder="...€">
-                </div>
-                <input type="submit" value="VALIDER">
-            </form>
-    </section>
 
     <div id="caroussel">
         <div class="slideshow-container">

@@ -4,22 +4,26 @@
 }
 
 body {
-    background-color: rgba(252, 255, 255, 0.8);
+    background-color: white;
 }
 
 /* Diaporama */
 
 /*Carroussel*/
 
+#caroussel{
+    margin-top: 4vh;
+}
+
 #caroussel>div>div>img{
     width: 100%;
+    object-fit: cover;
 }
 
 /* Slideshow container */
 .slideshow-container {
     border-radius: 10px;
-    max-width: 45vw;
-    ;
+    width: 40vw;
     position: relative;
     margin: auto;
 }
@@ -223,6 +227,9 @@ body>nav>a {
     border-bottom: solid 2px rgba(178, 0, 124, 1);
     border-left: solid 0.5px rgba(178, 0, 124, 1);
     margin: 0;
+    font-size: 2vw;
+    font-family: "Adventure";
+    color: rgba(178, 0, 124, 1);
 }
 
 body>nav>a:first-of-type {

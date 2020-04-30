@@ -13,16 +13,16 @@
 
     <form action="" method="POST">
         <div>
-            <label for="titre"></label>Titre :<input type="text" name="titre" id="titre">
+            <label for="titre">Titre :</label><input type="text" name="titre" id="titre">
         </div>
         <div>
-            <label for="lieu"></label>Adresse :<input type="text" name="lieu" id="lieu">
+            <label for="lieu">Adresse :</label><input type="text" name="lieu" id="lieu">
         </div>
         <div>
-            <label for="description"></label>Description <i>(350 caractères maximum (espaces compris))</i> :<input type="texte" maxlength="350" name="description" id="description">
+            <label for="description">Description <i>(350 caractères maximum (espaces compris))</i> :</label><input type="texte" maxlength="350" name="description" id="description">
         </div>
         <div>
-            <label for="site"></label>Site web de l'activité :<input type="texte" name="site" id="site">
+            <label for="site">Site web de l'activité :</label><input type="texte" name="site" id="site">
         </div>
         <div>
             <label for="type">Catégorie :</label><select name="type" id="type">
