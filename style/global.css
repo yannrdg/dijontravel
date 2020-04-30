@@ -57,7 +57,7 @@ header>div>div {
     margin: auto;
     background-color: white;
     color: rgba(178, 0, 124, 1);
-    font-size: 1.3vw;
+    font-size: 1.1vw;
     border-radius: 1rem;
     text-decoration: none;
     display: flex;
@@ -71,6 +71,9 @@ header>div>div {
 .co:hover {
     background-color: rgba(252, 255, 255, 0.8);
     color: rgba(175, 0, 124, 0.7);
+    font-size: 1.2vw;
+    transition-duration: 0.2s;
+    transition-delay: 200ms;
 }
 
 /* --------------------------------------------------------------------------*/
@@ -112,6 +115,8 @@ footer {
     margin-top: 1vh;
     background-color: black;
     color: white;
+    padding-top: 3vh;
+    padding-bottom: 3vh;
 }
 
 footer>div {
@@ -126,29 +131,9 @@ footer>div {
     width: 25%;
 }
 
-footer>div>p {
-    font-size: 2vw;
-}
-
-footer>div>p>a {
-    margin: 4%;
-}
-
-footer>div>p>a>img {
-    width: 4vw;
-}
-
-footer>div>p:last-of-type {
-    display: flex;
-    flex-flow: row nowrap;
-    justify-content: center;
-    align-items: center;
-
-}
-
-footer>div>p,
 footer>div>a {
-    margin: auto;
+    font-size: 1.5vw;
+    font-family: "Adventure";
 }
 
 footer>div>a {
@@ -158,10 +143,18 @@ footer>div>a {
 
 footer>div>a:hover {
     color: rgba(175, 0, 124, 0.7);
+    transition-duration: 0.4s;
+    transition-delay: 150ms;
 }
 
-footer>nav>ul>li>a {
-    color: white;
-    text-decoration: none;
-    font-size: 1rem;
+/*gestion des icone svg réseaux sociaux*/
+
+footer>div:last-of-type{
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: center;
+}
+
+footer>div:last-of-type>a{
+    margin: auto 1vw auto 1vw;
 }

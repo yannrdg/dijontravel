@@ -126,14 +126,17 @@ main>section>div>p {
   margin: 1%;
 }
 
+
 main>section>div>p:first-of-type {
   margin-bottom: 3vh;
   font-size: 1rem;
 }
 
 main>section>div>p:last-of-type {
-  margin-top: 3vh;
+  margin-top: 5vh;
+  font-size: 0.7rem;
   font-style: italic;
+  text-align: right;
 }
 
 main>section>div>a {

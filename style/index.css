@@ -12,7 +12,7 @@ body {
 /*Carroussel*/
 
 #caroussel{
-    margin-top: 4vh;
+    margin-top: 2vh;
 }
 
 #caroussel>div>div>img{
@@ -230,6 +230,21 @@ body>nav>a {
     font-size: 2vw;
     font-family: "Adventure";
     color: rgba(178, 0, 124, 1);
+    height: 20vh;
+}
+
+
+body>nav>a:hover>p{
+   color: rgba(178, 0, 124, 0.7);
+    font-size: 2.5rem;
+    transition-duration: 0.2s;
+    transition-delay: 150ms;
+}
+
+body>nav>a:hover>img{
+    height: 8vw;
+    transition-duration: 0.2s;
+    transition-delay: 150ms;
 }
 
 body>nav>a:first-of-type {
@@ -241,12 +256,12 @@ body>nav>a:last-of-type {
 }
 
 body>nav>a>img {
-    height: 7vw;
-    margin: 1vh auto 2vh auto;
+    height: 6vw;
+    margin: 1vh auto 3vh auto;
 }
 
 body>nav>a>p {
-    margin: auto auto 2vh auto;
+    margin: auto auto 0 auto;
 }
 
 /* -------------------------------------------------------------------------------------- */
@@ -262,7 +277,8 @@ main {
 
 main>section>h2 {
     font-size: 2.3vw;
-    margin: 2vw;
+    margin: 1.5vw;
+    font-family: "adventure";
 }
 
 main>section>div {
