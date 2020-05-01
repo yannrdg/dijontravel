@@ -17,6 +17,7 @@ if(isset($_POST['formconnect']))
         {
             $userinfo = $requser->fetch();
             $_SESSION['prenom'] = $userinfo['prenom'];
+            $_SESSION['nom'] = $userinfo['nom'];
             $_SESSION['email'] = $userinfo['email'];
             header('Location: ../index.php');
         }
@@ -39,14 +40,47 @@ if(isset($_POST['formconnect']))
 <head>
     <meta charset="UTF-8">
     <meta name="yann" content="autho">
-    <link rel="stylesheet" href="../style/connexion.css">
+    <link rel="stylesheet" href="../style/global.css">
     <title>Connexion</title>
 </head>
+<header>
+        <div>
+        <a href="../index.php">
+                <img src="https://cdn.glitch.com/0e477c32-76f7-47e1-a071-2405796f3fa5%2Flogooo.png?v=1575622630122"
+                    alt="logo principal"></a>
+            <h1>DIJ'ON TRAVEL</h1>
+            <div>
+            <?php
+        if(isset($_SESSION['prenom']))
+        {
+        ?>
+        <a href="deconnexion.php" class="co">Déconnexion</a>
+        <a href="profil.php" class="img"><img
+                        src="https://cdn.glitch.com/0e477c32-76f7-47e1-a071-2405796f3fa5%2Fprofil.png?v=1575622638108"
+                        alt="profil"></a>
+        <?php 
+        }
+        else 
+        {
+        ?>
+            <a href="connexion.php" class="co">Connexion</a>
+            <a href="inscription.php" class="co">Inscrivez-vous</a>
+        <?php 
+        }
+        ?> 
+            </div>     
+        </div>
+    </header>
 
 <body>
+    <p>
+        <?php
+            echo $erreurAjout;
+        ?>
+    </p>
     <main>
         <section>
-            <h1>S'identifier</h1>
+            <h1>Sidentifier</h1>
 
             <form action="" method="POST">
                 <div>

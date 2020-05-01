@@ -1,20 +1,58 @@
 <?php
 session_start();
+
+include 'config.php';
+    //On se connecte à la BDD
+    $bdd = new PDO("mysql:host=$hostname;dbname=$dbname", $username, $password);
+    $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
 ?>
 
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="index.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="../style/global.css">
+    <link rel="stylesheet" href="../style/formulaireajout.css">
+    <title>Ajout logement</title>
 </head>
 
 <body>
-    <h1>Formulaire HTML</h1>
-
+    <header>
+        <div>
+        <a href="../index.php">
+                <img src="https://cdn.glitch.com/0e477c32-76f7-47e1-a071-2405796f3fa5%2Flogooo.png?v=1575622630122"
+                    alt="logo principal"></a>
+            <h1>DIJ'ON TRAVEL</h1>
+            <div>
+            <?php
+        if(isset($_SESSION['prenom']))
+        {
+        ?>
+        <a href="deconnexion.php" class="co">Déconnexion</a>
+        <a href="profil.php" class="img"><img
+                        src="https://cdn.glitch.com/0e477c32-76f7-47e1-a071-2405796f3fa5%2Fprofil.png?v=1575622638108"
+                        alt="profil"></a>
+        <?php 
+        }
+        else 
+        {
+        ?>
+            <a href="connexion.php" class="co">Connexion</a>
+            <a href="inscription.php" class="co">Inscrivez-vous</a>
+        <?php 
+        }
+        ?> 
+            </div>     
+        </div>
+    </header>
+    <main>
+    <?php
+        if(isset($_SESSION['email']))
+        { 
+    ?>
+    <h1>Formulaire Activites</h1>
     <form action="" method="POST">
         <div>
             <label for="titre">Titre :</label><input type="text" name="titre" id="titre">
@@ -23,7 +61,8 @@ session_start();
             <label for="lieu">Adresse :</label><input type="text" name="lieu" id="lieu">
         </div>
         <div>
-            <label for="description">Description <i>(350 caractères maximum (espaces compris))</i> :</label><input type="texte" maxlength="350" name="description" id="description">
+            <label for="description">Description <i>(350 caractères maximum (espaces compris))</i> :</label><input
+                type="texte" maxlength="350" name="description" id="description">
         </div>
         <div>
             <label for="site">Site web de l'activité :</label><input type="texte" name="site" id="site">
@@ -41,6 +80,7 @@ session_start();
             <input type="submit" value="Envoyer" name="submit">
         </div>
     </form>
+    </main>
     <footer>
         <div>
             <a href="">Qui sommes-nous ?</a>
@@ -65,57 +105,58 @@ session_start();
                 </svg></a>
         </div>
     </footer>
-</body>
 
-</html>
-
-<?php
-
-include 'config.php';
+    <?php
 
     
-    $titre = $_POST['titre'];
-    $lieu = $_POST['lieu'];
-    $description = $_POST['description'];
-    $site = $_POST['site'];
-    $type = $_POST['type'];
-    $email2 = $_SESSION['email'];
+        $titre = $_POST['titre'];
+        $lieu = $_POST['lieu'];
+        $description = $_POST['description'];
+        $site = $_POST['site'];
+        $type = $_POST['type'];
+        $email2 = $_SESSION['email'];
 
-    
-    try{
+        try{
 
-        if ($type === 'sport'){
-            $categorie = "un";
-        } elseif ($type === 'visite') {
-            $categorie = "deux";
-        } elseif ($type === 'lieuouv') {
-            $categorie = "trois";
-        } elseif ($type === 'fete') {
-            $categorie = "quatre";
-        }
+            if ($type === 'sport'){
+                $categorie = "un";
+            } elseif ($type === 'visite') {
+                $categorie = "deux";
+            } elseif ($type === 'lieuouv') {
+                $categorie = "trois";
+            } elseif ($type === 'fete') {
+                $categorie = "quatre";
+            }
+                
+
+            //On se connecte à la BDD
+            $bdd = new PDO("mysql:host=$hostname;dbname=$dbname", $username, $password);
+            $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+            //On insère les données reçues
+            $sth = $bdd->prepare("
+                INSERT INTO Activites(titre, lieu, description, site, type, email)
+                VALUES(:titre, :lieu, :description, :site, :type, :email)");  
+            $sth->bindParam(':titre',$titre);
+            $sth->bindParam(':lieu',$lieu);
+            $sth->bindParam(':description',$description);
+            $sth->bindParam(':site',$site);
+            $sth->bindParam(':type',$categorie);
+            $sth->bindParam(':email',$email2);
+            $sth->execute();
             
-
-        //On se connecte à la BDD
-        $bdd = new PDO("mysql:host=$hostname;dbname=$dbname", $username, $password);
-        $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-         //On insère les données reçues
-        $sth = $bdd->prepare("
-            INSERT INTO Activites(titre, lieu, description, site, type, email)
-            VALUES(:titre, :lieu, :description, :site, :type, :email)");  
-        $sth->bindParam(':titre',$titre);
-        $sth->bindParam(':lieu',$lieu);
-        $sth->bindParam(':description',$description);
-        $sth->bindParam(':site',$site);
-        $sth->bindParam(':type',$categorie);
-        $sth->bindParam(':email',$email2);
-        $sth->execute();
-        
-        //On renvoie l'utilisateur vers la page de remerciement
-       header('Location: activites.php');
+            //On renvoie l'utilisateur vers la page de remerciement
+        header('Location: activites.php');
 
 
-    }
-    catch(PPDOException $Exception){
-        echo 'Impossible de traiter les données. Erreur : '.$Exception->getMessage();
-    }
+
+            }
+            catch(PPDOException $Exception){
+                echo 'Impossible de traiter les données. Erreur : '.$Exception->getMessage();
+            }
+
+        }
+        else 
+        {   
+            header('Location: ../html/transitionco.html');
+        }    
