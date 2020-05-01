@@ -30,7 +30,7 @@ if(isset($_SESSION['email']))
         </div>
     </header>
     <main>
-        <h1>Formulaire HTML</h1>
+        <h1>Formulaire offre logement</h1>
 
         <form action="" method="POST">
             <div>
@@ -40,7 +40,7 @@ if(isset($_SESSION['email']))
                 <label for="lieu">Adresse :</label><input type="text" name="lieu" id="lieu">
             </div>
             <div>
-                <label for="prix">Prix pas pers/nuit :</label><input type="texte" name="prix" id="prix">
+                <label for="prix">Prix minimum par pers/nuit <i>(en €)</i> :</label><input type="number" name="prix" id="prix">
             </div>
             <div>
                 <label for="nbrpers">Nombre de personnes :</label><input type="number" name="nbrpers" id="nbrpers">
@@ -64,19 +64,6 @@ if(isset($_SESSION['email']))
                 <input type="submit" value="Envoyer" name="submit">
             </div>
         </form>
-    </main>
-    <footer>
-        <div>
-            <a href="">Qui sommes-nous ?</a>
-        </div>
-        <div>
-            <a href="">Nous contacter</a>
-        </div>
-    </footer>
-
-</body>
-
-</html>
 <?php
 
 include 'config.php';
@@ -94,42 +81,62 @@ $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
     $type = $_POST['type'];
     $email3 = $_SESSION['email'];
 
+if(isset($_POST['submit']))
+{
+    if(!empty($_POST['titre']) AND !empty($_POST['lieu']) AND !empty($_POST['prix']) AND !empty($_POST['nbrpers']) AND !empty($_POST['lien']) AND !empty($_POST['contact']) AND !empty($_POST['type']))
+    {
+        $reqtitre = $bdd->prepare("SELECT * FROM Logement WHERE titre = ?");
+        $reqtitre->execute(array($titre));
+        $titreexist = $reqtitre->rowCount();
+        if($titreexist == 0)
+        {
     
-    try{
+            try{
 
-        if ($type === 'camping'){
-            $categorie = "un";
-        } elseif ($type === 'gite') {
-            $categorie = "deux";
-        } elseif ($type === 'chbrehote') {
-            $categorie = "trois";
-        } elseif ($type === 'hotel') {
-            $categorie = "quatre";
+                if ($type === 'camping'){
+                    $categorie = "un";
+                } elseif ($type === 'gite') {
+                    $categorie = "deux";
+                } elseif ($type === 'chbrehote') {
+                    $categorie = "trois";
+                } elseif ($type === 'hotel') {
+                    $categorie = "quatre";
+                }
+                    
+
+
+                //On insère les données reçues
+                $sth = $bdd->prepare("
+                    INSERT INTO Logement(titre, lieu, prix, nbrpers, lien, contact, type, email)
+                    VALUES(:titre, :lieu, :prix, :nbrpers, :lien, :contact, :type, :email)");  
+                $sth->bindParam(':titre',$titre);
+                $sth->bindParam(':lieu',$lieu);
+                $sth->bindParam(':prix',$prix);
+                $sth->bindParam(':nbrpers',$nbrpers);
+                $sth->bindParam(':lien',$lien);
+                $sth->bindParam(':contact',$contact);
+                $sth->bindParam(':type',$categorie);
+                $sth->bindParam(':email',$email3);
+                $sth->execute();
+                
+                //On renvoie l'utilisateur vers la page de remerciement
+                header('Location: logement.php');
+
+
+                }
+                catch(PPDOException $Exception){
+                    echo 'Impossible de traiter les données. Erreur : '.$Exception->getMessage();
+                }
+            }
+            else
+            {
+                $erreur2 = "Titre déjà existant";
+            }
         }
-            
-
-
-         //On insère les données reçues
-        $sth = $bdd->prepare("
-            INSERT INTO Logement(titre, lieu, prix, nbrpers, lien, contact, type, email)
-            VALUES(:titre, :lieu, :prix, :nbrpers, :lien, :contact, :type, :email)");  
-        $sth->bindParam(':titre',$titre);
-        $sth->bindParam(':lieu',$lieu);
-        $sth->bindParam(':prix',$prix);
-        $sth->bindParam(':nbrpers',$nbrpers);
-        $sth->bindParam(':lien',$lien);
-        $sth->bindParam(':contact',$contact);
-        $sth->bindParam(':type',$categorie);
-        $sth->bindParam(':email',$email3);
-        $sth->execute();
-        
-        //On renvoie l'utilisateur vers la page de remerciement
-       header('Location: logement.php');
-
-
-    }
-    catch(PPDOException $Exception){
-        echo 'Impossible de traiter les données. Erreur : '.$Exception->getMessage();
+        else
+        {
+        $erreur2 = "Il manque des informations";
+        }        
     }
 
 }
@@ -137,3 +144,26 @@ else
 {
     header('Location: ../html/transitionco.html');
 }
+?>
+
+        <p>
+            <?php
+        if(isset($erreur2))
+        {
+            echo $erreur2;
+        }
+        ?>
+        </p>
+    </main>
+    <footer>
+        <div>
+            <a href="">Qui sommes-nous ?</a>
+        </div>
+        <div>
+            <a href="">Nous contacter</a>
+        </div>
+    </footer>
+
+</body>
+
+</html>

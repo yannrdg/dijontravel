@@ -79,20 +79,19 @@ if(isset($_POST['formconnect']))
         ?>
     </p>
     <main>
-        <section>
-            <h1>Sidentifier</h1>
-
+            <fieldset>
+            <legend>Ravis de vous revoir !</legend>
             <form action="" method="POST">
                 <div>
                     <label for="emailconnect">Votre e-mail</label>
-                    <input type="email" id="emailconnect" name="emailconnect">
+                    <input type="email" id="emailconnect" name="emailconnect" value="<?php if(isset($emailconnnect)){ echo $emailconnnect; } ?>">
                 </div>
                 <div>
                     <label for="mdpconnect">Votre mot de passe</label>
                     <input type="password" id="mdpconnect" name="mdpconnect">
                 </div>
                 <div id="submit">
-                    <input type="submit" value="Connexion" name="formconnect">
+                    <input type="submit" value="S'identifier" name="formconnect">
                 </div>
                 <p><?php
                 if(isset($erreur))
@@ -101,9 +100,11 @@ if(isset($_POST['formconnect']))
                 }
                 ?></p>
             </form>
-            <a href="inscription.php">Première connexion</a>
-        </section>
-        <a href="../index.php">Accueil</a>
+            </fieldset>
+            <section>
+            <h4>Nouveau sur Dij’On Travel ?</h4>
+                <a href="inscription.php">Inscrivez vous dès maintenant !</a>
+            </section>
     </main>
     <footer>
         <div>

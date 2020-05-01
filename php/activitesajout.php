@@ -30,8 +30,6 @@ if(isset($_SESSION['email']))
         </div>
     </header>
     <main>
-        <h1>Formulaire HTML</h1>
-
         <h1>Formulaire Activites</h1>
         <form action="" method="POST">
             <div>
@@ -50,9 +48,9 @@ if(isset($_SESSION['email']))
             <div>
                 <label for="type">Catégorie :</label><select name="type" id="type">
                     <option value="sport">Sport</option>
-                    <option value="visite">Visites</option>
-                    <option value="lieuouv">Lieux ouverts</option>
-                    <option value="fete">Fêtes</option>
+                    <option value="cult">Lieu culturel</option>
+                    <option value="festival">Festival</option>
+                    <option value="autre">Autre</option>
 
                 </select>
             </div>
@@ -60,21 +58,8 @@ if(isset($_SESSION['email']))
                 <input type="submit" value="Envoyer" name="submit">
             </div>
         </form>
-    </main>
-    <footer>
-        <div>
-            <a href="">Qui sommes-nous ?</a>
-        </div>
-        <div>
-            <a href="">Nous contacter</a>
-        </div>
-    </footer>
 
-</body>
-
-</html>
-
-<?php
+        <?php
 
 include 'config.php';
 //On se connecte à la BDD
@@ -90,46 +75,88 @@ $site = $_POST['site'];
 $type = $_POST['type'];
 $email2 = $_SESSION['email'];
 
-try{
+    if(isset($_POST['submit']))
+    {
+        if(!empty($_POST['titre']) AND !empty($_POST['lieu']) AND !empty($_POST['description']) AND !empty($_POST['site']) AND !empty($_POST['type']))
+        {   
+            $reqtitre = $bdd->prepare("SELECT * FROM Activites WHERE titre = ?");
+            $reqtitre->execute(array($titre));
+            $titreexist = $reqtitre->rowCount();
+            if($titreexist == 0)
+            {
+                try{
 
-    if ($type === 'sport'){
-        $categorie = "un";
-    } elseif ($type === 'visite') {
-        $categorie = "deux";
-    } elseif ($type === 'lieuouv') {
-        $categorie = "trois";
-    } elseif ($type === 'fete') {
-        $categorie = "quatre";
+                    if ($type === 'sport'){
+                        $categorie = "un";
+                    } elseif ($type === 'cult') {
+                        $categorie = "deux";
+                    } elseif ($type === 'festival') {
+                        $categorie = "trois";
+                    } elseif ($type === 'autre') {
+                        $categorie = "quatre";
+                    }
+                        
+
+                    //On se connecte à la BDD
+                    $bdd = new PDO("mysql:host=$hostname;dbname=$dbname", $username, $password);
+                    $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+                    //On insère les données reçues
+                    $sth = $bdd->prepare("
+                        INSERT INTO Activites(titre, lieu, description, site, type, email)
+                        VALUES(:titre, :lieu, :description, :site, :type, :email)");  
+                    $sth->bindParam(':titre',$titre);
+                    $sth->bindParam(':lieu',$lieu);
+                    $sth->bindParam(':description',$description);
+                    $sth->bindParam(':site',$site);
+                    $sth->bindParam(':type',$categorie);
+                    $sth->bindParam(':email',$email2);
+                    $sth->execute();
+                        
+                        //On renvoie l'utilisateur vers la page de remerciement
+                    header('Location: activites.php');
+
+
+                }
+                catch(PPDOException $Exception){
+                    echo 'Impossible de traiter les données. Erreur : '.$Exception->getMessage();
+                }
+            }
+            else
+            {
+                $erreur2 = "Ce titre est déjà existant";
+            }
+        }
+        else
+        {
+        $erreur2 = "Il manque des informations";
+        }        
     }
-        
-
-    //On se connecte à la BDD
-    $bdd = new PDO("mysql:host=$hostname;dbname=$dbname", $username, $password);
-    $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-    //On insère les données reçues
-    $sth = $bdd->prepare("
-        INSERT INTO Activites(titre, lieu, description, site, type, email)
-        VALUES(:titre, :lieu, :description, :site, :type, :email)");  
-    $sth->bindParam(':titre',$titre);
-    $sth->bindParam(':lieu',$lieu);
-    $sth->bindParam(':description',$description);
-    $sth->bindParam(':site',$site);
-    $sth->bindParam(':type',$categorie);
-    $sth->bindParam(':email',$email2);
-    $sth->execute();
-        
-        //On renvoie l'utilisateur vers la page de remerciement
-       header('Location: activites.php');
-
-
-    }
-    catch(PPDOException $Exception){
-        echo 'Impossible de traiter les données. Erreur : '.$Exception->getMessage();
-    }
-
 }
 else
 {
     header('Location: ../html/transitionco.html');
 }
+
+?>
+        <p>
+            <?php
+        if(isset($erreur2))
+        {
+            echo $erreur2;
+        }
+        ?>
+        </p>
+    </main>
+    <footer>
+        <div>
+            <a href="">Qui sommes-nous ?</a>
+        </div>
+        <div>
+            <a href="">Nous contacter</a>
+        </div>
+    </footer>
+
+</body>
+
+</html>
