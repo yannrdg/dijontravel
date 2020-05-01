@@ -9,61 +9,71 @@ if(isset($_SESSION['email']))
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style/index.css">
+    <link rel="stylesheet" href="../style/formulaireajout.css">
     <link rel="stylesheet" href="../style/global.css">
     <title>Document</title>
 </head>
 
 <body>
-<header>
+    <header>
         <div>
-        <a href="../index.php">
+            <a href="../index.php">
                 <img src="https://cdn.glitch.com/0e477c32-76f7-47e1-a071-2405796f3fa5%2Flogooo.png?v=1575622630122"
                     alt="logo principal"></a>
             <h1>DIJ'ON TRAVEL</h1>
             <div>
-        <a href="deconnexion.php" class="co">Déconnexion</a>
-        <a href="profil.php" class="img"><img
+                <a href="deconnexion.php" class="co">Déconnexion</a>
+                <a href="profil.php" class="img"><img
                         src="https://cdn.glitch.com/0e477c32-76f7-47e1-a071-2405796f3fa5%2Fprofil.png?v=1575622638108"
                         alt="profil"></a>
-            </div>     
+            </div>
         </div>
     </header>
-    <h1>Formulaire HTML</h1>
+    <main>
+        <h1>Formulaire HTML</h1>
 
-    <form action="" method="POST">
-        <div>
-            <label for="titre">Titre :</label><input type="text" name="titre" id="titre">
-        </div>
-        <div>
-            <label for="lieu">Adresse :</label><input type="text" name="lieu" id="lieu">
-        </div>
-        <div>
-            <label for="prix">Prix pas pers/nuit :</label><input type="texte" name="prix" id="prix">
-        </div>
-        <div>
-            <label for="nbrpers">Nombre de personnes :</label><input type="number" name="nbrpers" id="nbrpers">
-        </div>
-        <div>
-            <label for="contact">Contact :</label><input type="text" name="contact" id="contact">
-        </div>
-        <div>
-            <label for="lien">Lien pour réserver :</label><input type="text" name="lien" id="lien">
-        </div>
-        <div>
-            <label for="type">Catégorie :</label><select name="type" id="type">
-                <option value="camping">Camping</option>
-                <option value="gite">Gîte</option>
-                <option value="chbrehote">Chambre d'hôte</option>
-                <option value="hotel">Hôtel</option>
+        <form action="" method="POST">
+            <div>
+                <label for="titre">Titre :</label><input type="text" name="titre" id="titre">
+            </div>
+            <div>
+                <label for="lieu">Adresse :</label><input type="text" name="lieu" id="lieu">
+            </div>
+            <div>
+                <label for="prix">Prix pas pers/nuit :</label><input type="texte" name="prix" id="prix">
+            </div>
+            <div>
+                <label for="nbrpers">Nombre de personnes :</label><input type="number" name="nbrpers" id="nbrpers">
+            </div>
+            <div>
+                <label for="contact">Contact :</label><input type="text" name="contact" id="contact">
+            </div>
+            <div>
+                <label for="lien">Lien pour réserver :</label><input type="text" name="lien" id="lien">
+            </div>
+            <div>
+                <label for="type">Catégorie :</label><select name="type" id="type">
+                    <option value="camping">Camping</option>
+                    <option value="gite">Gîte</option>
+                    <option value="chbrehote">Chambre d'hôte</option>
+                    <option value="hotel">Hôtel</option>
 
-            </select>
+                </select>
+            </div>
+            <div id="submit">
+                <input type="submit" value="Envoyer" name="submit">
+            </div>
+        </form>
+    </main>
+    <footer>
+        <div>
+            <a href="">Qui sommes-nous ?</a>
         </div>
-        <div id="submit">
-            <input type="submit" value="Envoyer" name="submit">
+        <div>
+            <a href="">Nous contacter</a>
         </div>
-    </form>
-    
+    </footer>
+
 </body>
 
 </html>

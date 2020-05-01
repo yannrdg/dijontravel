@@ -9,57 +9,67 @@ if(isset($_SESSION['email']))
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../style/index.css">
+    <link rel="stylesheet" href="../style/formulaireajout.css">
     <link rel="stylesheet" href="../style/global.css">
     <title>Document</title>
 </head>
 
 <body>
-<header>
+    <header>
         <div>
-        <a href="../index.php">
+            <a href="../index.php">
                 <img src="https://cdn.glitch.com/0e477c32-76f7-47e1-a071-2405796f3fa5%2Flogooo.png?v=1575622630122"
                     alt="logo principal"></a>
             <h1>DIJ'ON TRAVEL</h1>
             <div>
-        <a href="deconnexion.php" class="co">Déconnexion</a>
-        <a href="profil.php" class="img"><img
+                <a href="deconnexion.php" class="co">Déconnexion</a>
+                <a href="profil.php" class="img"><img
                         src="https://cdn.glitch.com/0e477c32-76f7-47e1-a071-2405796f3fa5%2Fprofil.png?v=1575622638108"
                         alt="profil"></a>
-            </div>     
+            </div>
         </div>
     </header>
-    <h1>Formulaire HTML</h1>
+    <main>
+        <h1>Formulaire HTML</h1>
 
-    <h1>Formulaire Activites</h1>
-    <form action="" method="POST">
-        <div>
-            <label for="titre">Titre :</label><input type="text" name="titre" id="titre">
-        </div>
-        <div>
-            <label for="lieu">Adresse :</label><input type="text" name="lieu" id="lieu">
-        </div>
-        <div>
-            <label for="description">Description <i>(350 caractères maximum (espaces compris))</i> :</label><input
-                type="texte" maxlength="350" name="description" id="description">
-        </div>
-        <div>
-            <label for="site">Site web de l'activité :</label><input type="texte" name="site" id="site">
-        </div>
-        <div>
-            <label for="type">Catégorie :</label><select name="type" id="type">
-                <option value="sport">Sport</option>
-                <option value="visite">Visites</option>
-                <option value="lieuouv">Lieux ouverts</option>
-                <option value="fete">Fêtes</option>
+        <h1>Formulaire Activites</h1>
+        <form action="" method="POST">
+            <div>
+                <label for="titre">Titre :</label><input type="text" name="titre" id="titre">
+            </div>
+            <div>
+                <label for="lieu">Adresse :</label><input type="text" name="lieu" id="lieu">
+            </div>
+            <div>
+                <label for="description">Description <i>(350 caractères maximum (espaces compris))</i> :</label><input
+                    type="texte" maxlength="350" name="description" id="description">
+            </div>
+            <div>
+                <label for="site">Site web de l'activité :</label><input type="texte" name="site" id="site">
+            </div>
+            <div>
+                <label for="type">Catégorie :</label><select name="type" id="type">
+                    <option value="sport">Sport</option>
+                    <option value="visite">Visites</option>
+                    <option value="lieuouv">Lieux ouverts</option>
+                    <option value="fete">Fêtes</option>
 
-            </select>
+                </select>
+            </div>
+            <div id="submit">
+                <input type="submit" value="Envoyer" name="submit">
+            </div>
+        </form>
+    </main>
+    <footer>
+        <div>
+            <a href="">Qui sommes-nous ?</a>
         </div>
-        <div id="submit">
-            <input type="submit" value="Envoyer" name="submit">
+        <div>
+            <a href="">Nous contacter</a>
         </div>
-    </form>
-    
+    </footer>
+
 </body>
 
 </html>
