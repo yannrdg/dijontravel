@@ -1,0 +1,106 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-image: url(../medias/place_de_la_lib.jpg);
+    background-size: 100%;
+    background-position: center;
+}
+
+/* MAIN */
+
+main{
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.6);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+main>h1{
+    font-size: 2vw;
+}
+
+main>form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    height: 80%;
+    width: 50%;
+}
+
+main>form>div{
+    display: inline-flex;
+    justify-content: space-between;
+    padding: 0 4vw;
+}
+
+main>form>div>div{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+}
+
+main>form>div:nth-of-type(2)>div, main>form>div:nth-of-type(3)>div{
+    width: 100%;
+}
+
+main>form>div>div>p{
+    width: auto;
+    font-weight: bold;
+    font-size: 1.1vw;
+}
+
+main>form>div>div>input{
+    height: 2.3vw;
+    text-align: center;
+    width: 100%;
+    border-radius: 0.1vw;
+}
+
+main>form>div>div>input, main>form>div:last-of-type>input{
+    border: black 0.15vw solid;
+    box-shadow: rgba(178, 0, 124, 1) 0.1vw 0.1vw;
+}
+
+
+main>form>div:nth-of-type(5){
+    align-items: center;
+    justify-content: center;
+}
+
+main>form>div:nth-of-type(5)>input{
+    margin: 0 1vw;
+}
+
+main>form>div:last-of-type{
+    display: flex;
+    justify-content: center;
+}
+
+main>form>div:last-of-type>input{
+    width: 15vw;
+    height: 2.2vw;
+    font-size: 1.2vw;
+    font-weight: bold;
+    text-align: center;
+}
+
+main>form>div:last-of-type>input:hover{
+    border: black 0.1vw solid;
+    font-size: 1.1vw;
+}
+
+main>form>div:last-of-type>input:active{
+    box-shadow: none;
+}

@@ -11,44 +11,39 @@ if(isset($_SESSION['prenom']))
 
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="yann" content="auhtor">
     <link rel="stylesheet" href="../style/global.css">
-    <link rel="stylesheet" href="../style/pageprofil.css">
+    <link rel="stylesheet" href="../style/profil.css">
     <title>Acceuil</title>
 </head>
+
 <body>
-<header>
+    <header>
         <div>
-        <a href="../index.php">
+            <a href="../index.php">
                 <img src="https://cdn.glitch.com/0e477c32-76f7-47e1-a071-2405796f3fa5%2Flogooo.png?v=1575622630122"
                     alt="logo principal"></a>
             <h1>DIJ'ON TRAVEL</h1>
             <div>
-            <?php
-        if(isset($_SESSION['prenom']))
-        {
-        ?>
-        <a href="deconnexion.php" class="co">Déconnexion</a>
-        <a href="profil.php" class="img"><img
-                        src="https://cdn.glitch.com/0e477c32-76f7-47e1-a071-2405796f3fa5%2Fprofil.png?v=1575622638108"
-                        alt="profil"></a>
-        <?php 
-        }
-        else 
-        {
-        ?>
-            <a href="connexion.php" class="co">Connexion</a>
-            <a href="inscription.php" class="co">Inscrivez-vous</a>
-        <?php 
-        }
-        ?> 
-            </div>     
+                <a href="deconnexion.php" class="co">Déconnexion</a>
+            </div>
         </div>
     </header>
     <main>
-        <p>Profil de <?php echo $_SESSION["prenom"]; ?></p>
+        <section>
+            <div>
+                <p>Profil de <?php echo $_SESSION["prenom"]; ?></p>
+                <p><?php echo $_SESSION["nom"].' '.$_SESSION["prenom"]; ?></p>
+                <p>mdp <?php echo $_SESSION["mdp"]; ?></p>
+            </div>
+            <div></div>
+            <div></div>
+
+        </section>
+
     </main>
     <footer>
         <div>
@@ -75,6 +70,7 @@ if(isset($_SESSION['prenom']))
         </div>
     </footer>
 </body>
+
 </html>
 <?php
 }

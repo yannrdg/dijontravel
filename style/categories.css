@@ -87,6 +87,22 @@ main {
   margin-bottom: 1.5vw;
 }
 
+.un{
+    display: flex;
+}
+
+.deux{
+    display: flex;
+}
+
+.trois{
+    display: flex;
+}
+
+.quatre{
+    display: flex;
+}
+
 main>section {
   display: flex;
   flex-direction: row-reverse;

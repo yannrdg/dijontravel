@@ -19,6 +19,7 @@ if(isset($_POST['formconnect']))
             $_SESSION['prenom'] = $userinfo['prenom'];
             $_SESSION['nom'] = $userinfo['nom'];
             $_SESSION['email'] = $userinfo['email'];
+            $_SESSION['mdp'] = $userinfo['mdp'];
             header('Location: ../index.php');
         }
         else 
@@ -28,7 +29,7 @@ if(isset($_POST['formconnect']))
     } 
     else 
     {
-        $erreur = "Tout les champs doivent être complétés";
+        $erreur = "Tous les champs doivent être complétés";
     }
 }
 
@@ -41,6 +42,7 @@ if(isset($_POST['formconnect']))
     <meta charset="UTF-8">
     <meta name="yann" content="autho">
     <link rel="stylesheet" href="../style/global.css">
+    <link rel="stylesheet" href="../style/connexion.css">
     <title>Connexion</title>
 </head>
 <header>

@@ -63,9 +63,9 @@ $activites = $info->fetchAll();
 
     <nav>
         <button>Sport</button>
-        <button>Visites</button>
-        <button>Lieux ouverts</button>
-        <button>Fêtes</button>
+        <button>Lieux culturels</button>
+        <button>festival</button>
+        <button>Autres</button>
         <button>Tous</button>
     </nav>
     <a href="activitesajout.php">+ Ajouter une annonce</a>

@@ -4,8 +4,17 @@
     margin: 0;
 }
 
+@font-face{
+    font-family: "adventure";
+    src: url('quadranta.otf') format('truetype');
+}
+
 /* ------------------------------------------------------------------------------ */
 /* HEADER */
+
+header{
+    width: 100%;
+}
 
 body>header {
     background-color: rgba(178, 0, 124, 1);
@@ -19,7 +28,7 @@ header>div {
 header>div>h1 {
     text-align: center;
     font-size: 5vw;
-    font-family: "Adventure";
+    font-family: "adventure";
     color: white;
     margin: auto 10vw auto auto;
 }
@@ -91,7 +100,7 @@ header>div>div {
 .banniere>h2 {
     font-size: 4vw;
     color: rgba(178, 0, 124);
-    font-family: "Adventure";
+    font-family: "adventure";
     text-align: center;
     margin: 0;
 }
@@ -110,12 +119,11 @@ footer {
     flex-flow: row wrap;
     justify-content: space-evenly;
     height: auto;
-    margin-top: 1vh;
     background-color: black;
     color: white;
     padding-top: 3vh;
     padding-bottom: 3vh;
-    width: 100vw;
+    width: 100%;
 }
 
 footer>div {
@@ -132,7 +140,7 @@ footer>div {
 
 footer>div>a {
     font-size: 1.5vw;
-    font-family: "Adventure";
+    font-family: "adventure";
 }
 
 footer>div>a {

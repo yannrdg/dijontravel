@@ -98,10 +98,6 @@ $bdd = new PDO("mysql:host=$hostname;dbname=$dbname", $username, $password);
                 alt="logo logements">
             <p>Logements</p>
         </a>
-        <a href="html/carte.html">
-            <img src="https://cdn.glitch.com/0e477c32-76f7-47e1-a071-2405796f3fa5%2Fmap.png?v=1575882153523" alt="map">
-            <p>Carte</p>
-        </a>
     </nav>
     <main>
         <section>

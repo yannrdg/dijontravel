@@ -208,11 +208,10 @@ body>section>article>form>input:hover {
 
 body>nav {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     height: auto;
     padding-top: 2vh;
-    padding-bottom: 2vh;
-    margin: 0 2vw 2vh 2vw;
+    margin: 0 2vw;
 }
 
 body>nav>a {

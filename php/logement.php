@@ -61,11 +61,11 @@ $logement = $info->fetchAll();
     </section>
 
     <nav>
-        <button>Campings</button>
-        <button>Gîtes</button>
-        <button>Chambres d'hôte</button>
-        <button>Hôtels</button>
-        <button>Tous</button>
+        <button id="un">Campings</button>
+        <button id="deux">Gîtes</button>
+        <button id="trois">Chambres d'hôte</button>
+        <button id="quatre">Hôtels</button>
+        <button id="cinq">Tous</button>
     </nav>
     <a href="logementajout.php">+ Ajouter une annonce</a>
     <main>
