@@ -47,42 +47,22 @@ $bdd = new PDO("mysql:host=$hostname;dbname=$dbname", $username, $password);
         </div>
     </header>
 
-    <div id="caroussel">
-        <div class="slideshow-container">
-
-            <div class="mySlides fade">
-                <div class="numbertext"></div>
-                <img src="https://cdn.glitch.com/0e477c32-76f7-47e1-a071-2405796f3fa5%2Fphotodijon.jpg?v=1584698935054"
-                    alt="">
+    <div class="slider-frame">
+        <div class="slide-image">
+            <div class="img-container">
+                <img src="medias/tram.jpg" alt="tram">
             </div>
-
-            <div class="mySlides fade">
-                <div class="numbertext"></div>
-                <img src="https://cdn.glitch.com/0e477c32-76f7-47e1-a071-2405796f3fa5%2Fphoto%20dijon.jpg?v=1584698935136"
-                    alt="">
+            <div class="img-container">
+                <img src="medias/darcy.jpg" alt="darcy">
             </div>
-
-            <div class="mySlides fade">
-                <div class="numbertext"></div>
-                <img src="https://cdn.glitch.com/0e477c32-76f7-47e1-a071-2405796f3fa5%2Fphotodijon1.jpg?v=1584698935875"
-                    alt="">
+            <div class="img-container">
+                <img src="medias/gargouille.jpg" alt="gargouille">
             </div>
-            <a class="prev" onclick="plusSlides(-1)">
-            </a> <a class="next" onclick="plusSlides(1)">>
-            </a>
+            <div class="img-container">
+                <img src="medias/rep.jpg" alt="rep">
+            </div>
         </div>
-        <br>
-
-        <div style="text-align:center">
-            <span class="dot"></span>
-            <span class="dot"></span>
-            <span class="dot"></span>
-        </div>
-
-
-
     </div>
-
 
     <nav>
         <a href="php/restaurant.php">

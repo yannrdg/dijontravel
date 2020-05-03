@@ -11,121 +11,60 @@ body {
 
 /*Carroussel*/
 
-#caroussel{
-    margin-top: 2vh;
+
+.slider-frame{
+    overflow: hidden;
+    height: 40vh;
+    width: 80vw;
+    margin-left: 10vw;
+    margin-top: 2vw;
+    margin-bottom: 2vw;
 }
 
-#caroussel>div>div>img{
-    width: 100%;
-    object-fit: cover;
+
+@-webkit-keyframes slide-animation{
+    0%{left:0;}
+    7%{left:0;}
+    14%{left:80vw;}
+    21%{left:80vw;}
+    38%{left:160vw;}
+    45%{left:160vw;}
+    52%{left:240vw;}
+    59%{left:240vw;}
+    66%{left:160vw;}
+    73%{left:160vw;}
+    80%{left:80vw;}
+    87%{left:80vw;}
+    94%{left:0;}
+    100%{left:0;}
 }
 
-/* Slideshow container */
-.slideshow-container {
-    border-radius: 10px;
-    width: 40vw;
+.slide-image{
+    width: 320vw;
+    height: 40vh;
+    margin: 0 0 0 -240vw;
     position: relative;
-    margin: auto;
+    -webkit-animation-name: slide-animation;
+    -webkit-animation-duration: 50s;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    -webkit-animation-play-state: running;
+    -webkit-transition-delay: 4s;
 }
 
-/*bordure des images*/
-#caroussel>div:first-child>div>img {
-    border-radius: 10px;
+.img-container{
+    height: 40vh;
+    width: 80vw;
+    position: relative;
+    float: left;
 }
 
-/* Next & previous buttons */
-.prev,
-.next {
-    cursor: pointer;
-    position: absolute;
-    top: 50%;
-    width: auto;
-    padding: 16px;
-    margin-top: -22px;
-    color: white;
-    font-weight: bold;
-    font-size: 18px;
-    transition: 0.6s ease;
-    border-radius: 0 3px 3px 0;
-    user-select: none;
+.img-container>img{
+    height: 40vh;
+    width: 80vw;
+    object-fit: cover;
+    border-radius: 2%;
 }
-
-/* Position the "next button" to the right */
-.next {
-    right: 0;
-    border-radius: 3px 0 0 3px;
-}
-
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover,
-.next:hover {
-    background-color: rgba(255, 0, 128, 0.425);
-}
-
-/* Point d'incation de diapositive */
-
-#caroussel>div:nth-child(2) {
-    margin-bottom: 5px;
-}
-
-.dot {
-    cursor: pointer;
-    height: 8px;
-    width: 8px;
-    margin: 0 2px;
-    background-color: rgba(240, 240, 240, 0.8);
-    border-radius: 50%;
-    display: inline-block;
-    transition: background-color 0.6s ease;
-}
-
-.active,
-.dot:hover {
-    background-color: rgba(255, 0, 128, 0.8);
-}
-
-/* Fading animation */
-.fade {
-    -webkit-animation-name: fade;
-    -webkit-animation-duration: 1.5s;
-    animation-name: fade;
-    animation-duration: 1.5s;
-}
-
-@-webkit-keyframes fade {
-    from {
-        opacity: .4
-    }
-
-    to {
-        opacity: 1
-    }
-}
-
-@keyframes fade {
-    from {
-        opacity: .4
-    }
-
-    to {
-        opacity: 1
-    }
-}
-
-/* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
-
-    .prev,
-    .next,
-    .text {
-        font-size: 11px
-    }
-}
-
-body>section:nth-of-type(2) {
-    margin-top: 2vh;
-}
-
 
 /* --------------------------------------------------------------------------- */
 /* SECTION */
