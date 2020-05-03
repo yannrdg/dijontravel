@@ -88,7 +88,7 @@ $activites = $info->fetchAll();
     </main>
     <footer>
         <div>
-            <a href="">Qui sommes-nous ?</a>
+            <a href="https://iutdijon.u-bourgogne.fr/mmicmstp/MMI2019/wp15/106-2/">Qui sommes-nous ?</a>
         </div>
         <div>
             <a href="">Nous contacter</a>

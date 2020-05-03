@@ -34,13 +34,19 @@ if(isset($_SESSION['prenom']))
     </header>
     <main>
         <section>
+            <h2>Profil</h2>
             <div>
-                <p>Profil de <?php echo $_SESSION["prenom"]; ?></p>
+                <p>Nom / Prénom</p>
                 <p><?php echo $_SESSION["nom"].' '.$_SESSION["prenom"]; ?></p>
-                <p>mdp <?php echo $_SESSION["mdp"]; ?></p>
             </div>
-            <div></div>
-            <div></div>
+            <div>
+                <p>Adresse mail</p>
+                <p><?php echo $_SESSION["email"]; ?></p>
+            </div>
+            <div>
+                <p>Mot de passe</p>
+                <p><?php echo $_SESSION["mdp"]; ?></p>
+            </div>
 
         </section>
 
