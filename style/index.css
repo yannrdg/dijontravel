@@ -167,14 +167,12 @@ body>nav>a {
 body>nav>a:hover>p{
    color: rgba(178, 0, 124, 0.7);
     font-size: 2.5vw;
-    transition-duration: 0.2s;
-    transition-delay: 150ms;
+    transition-duration: 300ms;
 }
 
 body>nav>a:hover>img{
-    height: 8vw;
-    transition-duration: 0.2s;
-    transition-delay: 150ms;
+    height: 7vw;
+    transition-duration: 300ms;
 }
 
 body>nav>a:first-of-type {
@@ -246,6 +244,18 @@ main>section>div>article>a>img{
     object-fit: cover;
 }
 
+/*hover article */
+
 main>section>div>article>a:hover>h3{
     color: rgba(178, 0, 124, 1);
+    transition-duration: 300ms;
+    transition-delay: 100ms;
+}
+
+main>section>div>article>a:hover>img{
+    transition-duration: 300ms;
+    transition-delay: 100ms;
+    width: 31vw;
+    height: 21vw;
+    margin: auto;
 }

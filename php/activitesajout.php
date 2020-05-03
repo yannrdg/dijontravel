@@ -37,11 +37,10 @@ if(isset($_SESSION['email']))
                 <label for="titre">Titre :</label><input type="text" name="titre" id="titre">
             </div>
             <div>
-                <label for="lieu">Adresse :</label><input type="text" name="lieu" id="lieu">
+                <label for="lieu">Adresse :</label><input type="text" name="lieu" id="lieu" placeholder="Place de la Libération 21000 DIJON">
             </div>
             <div>
-                <label for="description">Description <i>(350 caractères maximum (espaces compris))</i> :</label><input
-                    type="texte" maxlength="350" name="description" id="description">
+                <label for="description">Description <i>(350 caractères maximum (espaces compris))</i> :</label><textarea type="texte" maxlength="350" name="description" id="description"cols="55" rows="11"></textarea>
             </div>
             <div>
                 <label for="site">Site web de l'activité :</label><input type="texte" name="site" id="site">

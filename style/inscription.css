@@ -65,7 +65,8 @@ main>form>div>div>input{
     height: 2.3vw;
     text-align: center;
     width: 100%;
-    border-radius: 0.1vw;
+    border-radius: 10vw;
+    padding: 2%;
 }
 
 main>form>div>div>input, main>form>div:last-of-type>input{
@@ -88,19 +89,25 @@ main>form>div:last-of-type{
     justify-content: center;
 }
 
-main>form>div:last-of-type>input{
+#valider{
     width: 15vw;
     height: 2.2vw;
     font-size: 1.2vw;
     font-weight: bold;
     text-align: center;
+    border-radius: 10vw;
 }
 
-main>form>div:last-of-type>input:hover{
+#valider:hover{
     border: black 0.1vw solid;
     font-size: 1.1vw;
+    transition-duration: 250ms;
+    transition-delay: 100ms;
+    background-color: rgba(178, 0, 124, 1);
+    color: white;
+
 }
 
-main>form>div:last-of-type>input:active{
+#valider:active{
     box-shadow: none;
 }

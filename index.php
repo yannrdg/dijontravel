@@ -114,7 +114,7 @@ $bdd = new PDO("mysql:host=$hostname;dbname=$dbname", $username, $password);
             <div>
                 <article>
                     <a
-                        href="https://fr-fr.facebook.com/pages/category/Cr%C3%AAperie/LES-Gourmands-Disent-194515320679874/"><img
+                        href="https://www.tripadvisor.fr/Restaurant_Review-g187111-d4171016-Reviews-Les_Gourmands_Disent-Dijon_Cote_d_Or_Bourgogne_Franche_Comte.html"><img
                             src="medias/gourmandisent.jpg"
                             alt="restau1">
                             <h3>Les Gourmands...disent-36 rue de Fontaine les Dijon, 21000 Dijon</h3>
@@ -129,7 +129,7 @@ $bdd = new PDO("mysql:host=$hostname;dbname=$dbname", $username, $password);
                 </article>
                 <article>
                     <a
-                        href="https://fr-fr.facebook.com/pages/category/Italian-Restaurant/Version-Latine-739834309425818/"><img
+                        href="https://www.tripadvisor.fr/Restaurant_Review-g187111-d806926-Reviews-Version_Latine-Dijon_Cote_d_Or_Bourgogne_Franche_Comte.html"><img
                             src="medias/version-latine.jpg"
                             alt="restau2">
                             <h3>Version Latine - 16 rue Odebert, 21000 Dijon</h3>

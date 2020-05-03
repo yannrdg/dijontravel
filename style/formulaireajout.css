@@ -10,7 +10,7 @@ body{
 
 main{
     width: 60%;
-    margin: 5vh auto auto auto;
+    margin: 5vh auto 10vh auto;
     height: 32vw;
     background-color: rgba(255, 255, 255, 0.8);
     display: flex;
@@ -24,6 +24,8 @@ main>h1{
     color: rgba(178, 0, 124, 1);
     font-family: "adventure";
 }
+
+/*formualire */
 
 main>form{
     height: 80%;
@@ -47,9 +49,12 @@ main>form>div>label{
     font-weight: bold;
 }
 
+/* input du formulaire */
+
 main>form>div>input{
     width: 20vw;
     height: 1.8vw;
+    text-align: center;
 }
 
 main>form>div:last-of-type>input{
@@ -68,3 +73,11 @@ main>form>div:last-of-type>input:hover{
     border: 0.15vw rgba(178, 0, 124, 0.7) solid;
     font-weight: 500;
 }
+
+/*gestion de la forme des input et textarea*/
+
+
+form>div>input, textarea{
+    border-radius: 2vw;
+}
+

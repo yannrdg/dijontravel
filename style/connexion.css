@@ -103,4 +103,6 @@ main>section>a{
 
 main>section>a:hover, main>fieldset>form>div:nth-of-type(3)>input:hover{
     color: rgba(175, 0, 124, 1);
+    transition-duration: 250ms;
+    transition-delay: 50ms;
 }

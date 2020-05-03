@@ -37,16 +37,16 @@ if(isset($_SESSION['email']))
                 <label for="titre">Titre :</label><input type="text" name="titre" id="titre">
             </div>
             <div>
-                <label for="lieu">Adresse :</label><input type="text" name="lieu" id="lieu">
+                <label for="lieu">Adresse :</label><input type="text" name="lieu" id="lieu" placeholder="Place de la Libération 21000 DIJON">
             </div>
             <div>
-                <label for="prix">Prix minimum d'un menu <i>(en €)</i>  :</label><input type="number" name="prix" id="prix">
+                <label for="prix">Prix minimum d'un menu <i>(en €)</i>  :</label><input type="number" name="prix" id="prix" placeholder="10">
             </div>
             <div>
                 <label for="nbrpers">Nombre de personnes :</label><input type="number" name="nbrpers" id="nbrpers">
             </div>
             <div>
-                <label for="contact">Contact :</label><input type="text" name="contact" id="contact">
+                <label for="contact">Contact :</label><input type="text" name="contact" id="contact" placeholder="09.09.09.09.09">
             </div>
             <div>
                 <label for="lien">Lien pour réserver :</label><input type="text" name="lien" id="lien">

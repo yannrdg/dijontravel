@@ -106,7 +106,7 @@ if(isset($_POST['formconnect']))
         </fieldset>
         <section>
             <h4>Nouveau sur Dij’On Travel ?</h4>
-            <a href="inscription.php">Inscrivez vous dès maintenant !</a>
+            <a href="inscription.php">Inscrivez-vous dès maintenant !</a>
         </section>
     </main>
     <footer>
