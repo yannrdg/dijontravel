@@ -11,7 +11,8 @@ if(isset($_SESSION['email']))
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../style/formulaireajout.css">
     <link rel="stylesheet" href="../style/global.css">
-    <title>Document</title>
+    <link rel="icon" href="../medias/logooo.png" />
+    <title>Offre logement</title>
 </head>
 
 <body>
@@ -156,8 +157,8 @@ else
         </p>
     </main>
     <footer>
-        <div>
-            <a href="https://iutdijon.u-bourgogne.fr/mmicmstp/MMI2019/wp15/106-2/">Qui sommes-nous ?</a>
+    <div>
+            <a href="">Qui sommes-nous ?</a>
         </div>
         <div>
             <a href="">Nous contacter</a>

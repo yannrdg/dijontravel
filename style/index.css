@@ -131,14 +131,6 @@ body>section:nth-of-type(2) {
 /* SECTION */
 
 body>section:nth-of-type(1) {
-    /*
-    background-size: 100%;
-    width: 100%;
-    height: auto;
-    display: flex;
-    align-items: center;
-    display: flex;
-    flex-flow: column wrap;*/
     display: none;
 }
 
@@ -229,13 +221,13 @@ body>nav>a {
     font-size: 2vw;
     font-family: "Adventure";
     color: rgba(178, 0, 124, 1);
-    height: 20vh;
+    height: 10vw;
 }
 
 
 body>nav>a:hover>p{
    color: rgba(178, 0, 124, 0.7);
-    font-size: 2.5rem;
+    font-size: 2.5vw;
     transition-duration: 0.2s;
     transition-delay: 150ms;
 }
@@ -266,45 +258,55 @@ body>nav>a>p {
 /* -------------------------------------------------------------------------------------- */
 /* MAIN */
 
-main {
+main{
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: space-evenly;
-    margin-bottom: 2vw;
 }
 
-main>section>h2 {
-    font-size: 2.3vw;
-    margin: 1.5vw;
+main>section{
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 1vw 0;
+}
+
+main>section>h2{
     font-family: "adventure";
+    margin: 1vw 3vw;
+    font-size: 1.7vw;
 }
 
-main>section>div {
+main>section>div{
+    width: 100%;
     display: inline-flex;
+    justify-content: space-evenly;
 }
 
-main>section>div>article {
-    width: 32vw;
+main>section>div>article{
+    width: 30vw;
+}
+
+main>section>div>article>a{
     display: flex;
     flex-direction: column;
-    align-items: center;
+    justify-content: space-evenly;
+    text-decoration: none;
+    color: black;
 }
 
-main>section>div>article>img {
+main>section>div>article>a>h3{
+    margin: 0.5vw 1vw;
+    font-size: 1.3vw;
+    text-align: center;
+}
+
+main>section>div>article>a>img{
     width: 30vw;
     height: 20vw;
     border-radius: 1vw;
+    object-fit: cover;
 }
 
-main>section>div>article>h3,
-main>section>div>article>p {
-    width: 80%;
-    font-size: 1.6vw;
-    text-align: center;
-    margin: 1vh auto 0.5vh auto;
-}
-
-main>section>div>article>p:first-of-type {
-    text-align: justify;
+main>section>div>article>a:hover>h3{
+    color: rgba(178, 0, 124, 1);
 }

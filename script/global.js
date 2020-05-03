@@ -8,7 +8,7 @@ const quatre = document.querySelectorAll('main>section.quatre');
 bouton[0].addEventListener('click', () =>{
   for(let i=0;i<un.length;i++)
   {
-      un[i].style.display='flex';
+      un[i].style.display='grid';
   }
   for(let j=0;j<deux.length;j++)
   {
@@ -32,7 +32,7 @@ bouton[1].addEventListener('click', () =>{
   }
   for(let j=0;j<deux.length;j++)
   {
-      deux[j].style.display='flex';
+      deux[j].style.display='grid';
   }
   for(let k=0;k<trois.length;k++)
   {
@@ -56,7 +56,7 @@ bouton[2].addEventListener('click', () =>{
   }
   for(let k=0;k<trois.length;k++)
   {
-      trois[k].style.display='flex';
+      trois[k].style.display='grid';
   }
   for(let l=0;l<quatre.length;l++)
   {
@@ -80,7 +80,7 @@ bouton[3].addEventListener('click', () =>{
   }
   for(let l=0;l<quatre.length;l++)
   {
-      quatre[l].style.display='flex';
+      quatre[l].style.display='grid';
   }
 
 });
@@ -88,19 +88,19 @@ bouton[3].addEventListener('click', () =>{
 bouton[4].addEventListener('click', () =>{
   for(let i=0;i<un.length;i++)
   {
-      un[i].style.display='flex';
+      un[i].style.display='grid';
   }
   for(let j=0;j<deux.length;j++)
   {
-      deux[j].style.display='flex';
+      deux[j].style.display='grid';
   }
   for(let k=0;k<trois.length;k++)
   {
-      trois[k].style.display='flex';
+      trois[k].style.display='grid';
   }
   for(let l=0;l<quatre.length;l++)
   {
-      quatre[l].style.display='flex';
+      quatre[l].style.display='grid';
   }
 
 });

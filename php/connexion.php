@@ -19,7 +19,6 @@ if(isset($_POST['formconnect']))
             $_SESSION['prenom'] = $userinfo['prenom'];
             $_SESSION['nom'] = $userinfo['nom'];
             $_SESSION['email'] = $userinfo['email'];
-            $_SESSION['mdp'] = $userinfo['mdp'];
             header('Location: ../index.php');
         }
         else 
@@ -29,7 +28,7 @@ if(isset($_POST['formconnect']))
     } 
     else 
     {
-        $erreur = "Tous les champs doivent être complétés";
+        $erreur = "Tout les champs doivent être complétés";
     }
 }
 
@@ -43,36 +42,37 @@ if(isset($_POST['formconnect']))
     <meta name="yann" content="autho">
     <link rel="stylesheet" href="../style/global.css">
     <link rel="stylesheet" href="../style/connexion.css">
+    <link rel="icon" href="../medias/logooo.png" />
     <title>Connexion</title>
 </head>
 <header>
-        <div>
+    <div>
         <a href="../index.php">
-                <img src="https://cdn.glitch.com/0e477c32-76f7-47e1-a071-2405796f3fa5%2Flogooo.png?v=1575622630122"
-                    alt="logo principal"></a>
-            <h1>DIJ'ON TRAVEL</h1>
-            <div>
+            <img src="https://cdn.glitch.com/0e477c32-76f7-47e1-a071-2405796f3fa5%2Flogooo.png?v=1575622630122"
+                alt="logo principal"></a>
+        <h1>DIJ'ON TRAVEL</h1>
+        <div>
             <?php
         if(isset($_SESSION['prenom']))
         {
         ?>
-        <a href="deconnexion.php" class="co">Déconnexion</a>
-        <a href="profil.php" class="img"><img
-                        src="https://cdn.glitch.com/0e477c32-76f7-47e1-a071-2405796f3fa5%2Fprofil.png?v=1575622638108"
-                        alt="profil"></a>
-        <?php 
+            <a href="deconnexion.php" class="co">Déconnexion</a>
+            <a href="profil.php" class="img"><img
+                    src="https://cdn.glitch.com/0e477c32-76f7-47e1-a071-2405796f3fa5%2Fprofil.png?v=1575622638108"
+                    alt="profil"></a>
+            <?php 
         }
         else 
         {
         ?>
             <a href="connexion.php" class="co">Connexion</a>
             <a href="inscription.php" class="co">Inscrivez-vous</a>
-        <?php 
+            <?php 
         }
-        ?> 
-            </div>     
+        ?>
         </div>
-    </header>
+    </div>
+</header>
 
 <body>
     <p>
@@ -81,16 +81,17 @@ if(isset($_POST['formconnect']))
         ?>
     </p>
     <main>
-            <fieldset>
+        <fieldset>
             <legend>Ravis de vous revoir !</legend>
             <form action="" method="POST">
                 <div>
-                    <label for="emailconnect">Votre e-mail</label>
-                    <input type="email" id="emailconnect" name="emailconnect" value="<?php if(isset($emailconnnect)){ echo $emailconnnect; } ?>">
+                    <label for="emailconnect">Adresse email</label>
+                    <input type="email" id="emailconnect" name="emailconnect" placeholder="Adresse email"
+                        value="<?php if(isset($emailconnnect)){ echo $emailconnnect; } ?>">
                 </div>
                 <div>
-                    <label for="mdpconnect">Votre mot de passe</label>
-                    <input type="password" id="mdpconnect" name="mdpconnect">
+                    <label for="mdpconnect">Mot de passe</label>
+                    <input type="password" id="mdpconnect" name="mdpconnect" placeholder="Mot de passe">
                 </div>
                 <div id="submit">
                     <input type="submit" value="S'identifier" name="formconnect">
@@ -102,28 +103,28 @@ if(isset($_POST['formconnect']))
                 }
                 ?></p>
             </form>
-            </fieldset>
-            <section>
+        </fieldset>
+        <section>
             <h4>Nouveau sur Dij’On Travel ?</h4>
-                <a href="inscription.php">Inscrivez vous dès maintenant !</a>
-            </section>
+            <a href="inscription.php">Inscrivez vous dès maintenant !</a>
+        </section>
     </main>
     <footer>
         <div>
-            <a href="https://iutdijon.u-bourgogne.fr/mmicmstp/MMI2019/wp15/106-2/">Qui sommes-nous ?</a>
+            <a href="">Qui sommes-nous ?</a>
         </div>
         <div>
             <a href="">Nous contacter</a>
         </div>
         <div>
-            <a href=""><svg width="4vw" height="6vh" aria-hidden="true" focusable="false" data-prefix="fab"
+            <a href="https://fr-fr.facebook.com/VilledeDijon/"><svg width="4vw" height="6vh" aria-hidden="true" focusable="false" data-prefix="fab"
                     data-icon="facebook-square" class="svg-inline--fa fa-facebook-square fa-w-14" role="img"
                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                     <path fill="currentColor"
                         d="M400 32H48A48 48 0 0 0 0 80v352a48 48 0 0 0 48 48h137.25V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.27c-30.81 0-40.42 19.12-40.42 38.73V256h68.78l-11 71.69h-57.78V480H400a48 48 0 0 0 48-48V80a48 48 0 0 0-48-48z">
                     </path>
                 </svg></a>
-            <a href=""> <svg width="4vw" height="6vh" aria-hidden="true" focusable="false" data-prefix="fab"
+            <a href="https://www.instagram.com/villededijon/"> <svg width="4vw" height="6vh" aria-hidden="true" focusable="false" data-prefix="fab"
                     data-icon="instagram" class="svg-inline--fa fa-instagram fa-w-14" role="img"
                     xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
                     <path fill="currentColor"
