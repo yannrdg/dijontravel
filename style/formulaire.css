@@ -6,6 +6,7 @@ body {
     height: 100vh;
     background-image: url(https://cdn.glitch.com/0e477c32-76f7-47e1-a071-2405796f3fa5%2Fdijon%20photo.jpg?v=1575882122275);
     background-size: 100% 100%;
+    font-family: "kalam";
 }
 
 /* MAIN */

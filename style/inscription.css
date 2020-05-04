@@ -11,6 +11,7 @@ body{
     background-image: url(../medias/place_de_la_lib.jpg);
     background-size: 100%;
     background-position: center;
+    font-family: "kalam";
 }
 
 /* MAIN */
@@ -23,7 +24,7 @@ main{
     justify-content: center;
     align-items: center;
     background-color: rgba(255, 255, 255, 0.6);
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "kalam";
 }
 
 main>h1{
@@ -96,6 +97,7 @@ main>form>div:last-of-type{
     font-weight: bold;
     text-align: center;
     border-radius: 10vw;
+    font-family: "kalam";
 }
 
 #valider:hover{
@@ -105,9 +107,4 @@ main>form>div:last-of-type{
     transition-delay: 100ms;
     background-color: rgba(178, 0, 124, 1);
     color: white;
-
-}
-
-#valider:active{
-    box-shadow: none;
 }

@@ -6,7 +6,17 @@
 
 @font-face{
     font-family: "adventure";
-    src: url('https://www.googleapis.com/webfonts/v1/webfonts?key=AIzaSyDDteADOi6mXtEZTPV2oGttmdsrWOWQHpU') format('ttf');
+    src: url('../medias/fonts/adventure.otf') format('opentype');
+}
+
+@font-face{
+    font-family: "kalam";
+    src: url('../medias/fonts/kalam.ttf') format("truetype");
+}
+
+@font-face{
+    font-family: "kalam2";
+    src: url('../medias/fonts/kalam2.ttf') format("truetype");
 }
 
 /* ------------------------------------------------------------------------------ */
@@ -68,6 +78,7 @@ header>div>div {
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: "kalam";
 }
 
 .co:hover {
@@ -114,8 +125,8 @@ footer {
     height: auto;
     background-color: black;
     color: white;
-    padding-top: 3vh;
-    padding-bottom: 3vh;
+    padding-top: 1vw;
+    padding-bottom: 1vw;
     width: 100%;
 }
 

@@ -5,7 +5,7 @@ include 'config.php';
 $bdd = new PDO("mysql:host=$hostname;dbname=$dbname", $username, $password);
 $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-$info = $bdd->prepare("SELECT * FROM Logement");
+$info = $bdd->prepare("SELECT * FROM Logement ORDER BY date DESC");
 $exec = $info->execute();
 $logement = $info->fetchAll();
 
@@ -21,6 +21,7 @@ $logement = $info->fetchAll();
     <title>Logements</title>
     <link rel="stylesheet" href="../style/global.css">
     <link rel="stylesheet" href="../style/categories.css">
+    <link rel="icon" href="../medias/logooo.png" />
     <script src="../script/global.js" async></script>
 </head>
 
@@ -82,7 +83,7 @@ $logement = $info->fetchAll();
                 <a href="<?= $items['lien']?>"><?= $items['lien']?></a>
                 <p>Ajouté par : <?= $items['email']?></p>
             </div>
-            <img src="https://cdn.glitch.com/0e477c32-76f7-47e1-a071-2405796f3fa5%2Fgites%20lilas.jpg?v=1578835905477"
+            <img src="../medias/<?= $items['file']?>"
                 alt="gites">
         </section>
             <?php endforeach; ?>

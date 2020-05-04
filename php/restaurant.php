@@ -5,7 +5,7 @@ include 'config.php';
 $bdd = new PDO("mysql:host=$hostname;dbname=$dbname", $username, $password);
 $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-$info = $bdd->prepare("SELECT * FROM Restaurant");
+$info = $bdd->prepare("SELECT * FROM Restaurant ORDER BY date DESC");
 $exec = $info->execute();
 $restaurant = $info->fetchAll();
 
@@ -74,7 +74,7 @@ $restaurant = $info->fetchAll();
             <div>
                 <h3><?= $items['titre']?></h3>
                 <p><?= $items['lieu']?></p>
-                <p>Prix : <?= $items['prix']?>€ la nuit/pers</p>
+                <p>Prix : <?= $items['prix']?>€ minimum</p>
                 <p><?= $items['nbrpers']?> personnes</p>
                 <p>Pour plus d'informations ou pour réserver :</p>
                 <p><?= $items['contact']?></p>
@@ -82,8 +82,7 @@ $restaurant = $info->fetchAll();
                 <a href="<?= $items['lien']?>"><?= $items['lien']?></a>
                 <p>Ajouté par : <?= $items['email']?></p>
             </div>
-            <img src="https://cdn.glitch.com/0e477c32-76f7-47e1-a071-2405796f3fa5%2Fgites%20lilas.jpg?v=1578835905477"
-                alt="gites">
+            <img src="../medias/<?= $items['file']?>">
         </section>
             <?php endforeach; ?>
     </main>

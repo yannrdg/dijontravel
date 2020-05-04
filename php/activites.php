@@ -6,7 +6,7 @@ include 'config.php';
 $bdd = new PDO("mysql:host=$hostname;dbname=$dbname", $username, $password);
 $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-$info = $bdd->prepare("SELECT * FROM Activites");
+$info = $bdd->prepare("SELECT * FROM Activites ORDER BY date DESC");
 $exec = $info->execute();
 $activites = $info->fetchAll();
 
@@ -63,9 +63,9 @@ $activites = $info->fetchAll();
     </section>
 
     <nav>
-        <button>Sport</button>
+        <button>Sports</button>
         <button>Lieux culturels</button>
-        <button>festival</button>
+        <button>festivals</button>
         <button>Autres</button>
         <button>Tous</button>
     </nav>
@@ -82,7 +82,7 @@ $activites = $info->fetchAll();
                 <a href="<?= $items['site']?>"><?= $items['site']?></a>
                 <p>Ajouté par : <?= $items['email']?></p>
             </div>
-            <img src="../medias/lavapeur.jpg"
+            <img src="../medias/<?= $items['file']?>"
                 alt="lavapeur">
         </section>
             <?php endforeach; ?>

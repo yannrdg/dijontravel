@@ -37,16 +37,16 @@ if(isset($_SESSION['prenom']))
         <section>
             <h2>Profil</h2>
             <div>
-                <p>Nom / Prénom</p>
-                <p><?php echo $_SESSION["nom"].' '.$_SESSION["prenom"]; ?></p>
+                <p>Nom</p>
+                <p><?php echo $_SESSION["nom"]; ?></p>
+            </div>
+            <div>
+                <p>Prénom</p>
+                <p><?php echo $_SESSION["prenom"]; ?></p>
             </div>
             <div>
                 <p>Adresse mail</p>
                 <p><?php echo $_SESSION["email"]; ?></p>
-            </div>
-            <div>
-                <p>Mot de passe</p>
-                <p><?php echo $_SESSION["mdp"]; ?></p>
             </div>
 
         </section>
