@@ -1,5 +1,9 @@
 <?php
 session_start();
+if(isset($_SESSION['email']))
+{
+	header ('Location: ../index.php');
+}
 include 'config.php';
 
 $bdd = new PDO("mysql:host=$hostname;dbname=$dbname", $username, $password);

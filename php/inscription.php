@@ -1,5 +1,9 @@
 <?php
-
+session_start();
+if(isset($_SESSION['email']))
+{
+	header ('Location: ../index.php');
+}
 $nom = htmlspecialchars($_POST['nom']);
 $prenom = htmlspecialchars($_POST['prenom']);
 $email = htmlspecialchars($_POST['email']);
