@@ -103,17 +103,9 @@ catch(PPDOException $Exception)
 </head>
 
 <body>
-<header>
-        <div>
-        <a href="../index.php">
-                <img src="https://cdn.glitch.com/0e477c32-76f7-47e1-a071-2405796f3fa5%2Flogooo.png?v=1575622630122"
-                    alt="logo principal"></a>
-            <h1>DIJ'ON TRAVEL</h1>
-            <div>
-            <a href="connexion.php" class="co">Connexion</a>
-            </div>     
-        </div>
-    </header>
+<?php
+include ('../includes/header.php');
+?>
     <main>
         <h1>Inscription</h1>
         <form action="" method="POST">
