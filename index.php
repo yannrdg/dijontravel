@@ -14,7 +14,6 @@ $bdd = new PDO("mysql:host=$hostname;dbname=$dbname", $username, $password);
     <link rel="icon" href="./medias/logooo.png" />
     <link rel="stylesheet" href="style/global.css">
     <link rel="stylesheet" href="style/index.css">
-    <script src="script/index.js" async></script>
 </head>
 
 <body>
