@@ -115,7 +115,7 @@ catch(PPDOException $Exception)
         <form action="" method="POST">
             <div>
                 <div>
-                    <label for="nom">Nom :</label>
+                    <label for="nom">Nom</label>
                     <input type="text" name="nom" id="nom" name="nom" placeholder="DUPONT" value="<?php if(isset($nom)){ echo $nom; } ?>">
                 </div>
                 <div>
@@ -131,7 +131,7 @@ catch(PPDOException $Exception)
             </div>
             <div>
                 <div>
-                    <label for="email2">Confirmer mon adresse mail</label>
+                    <label for="email2">Confirmez votre adresse mail</label>
                     <input type="email" name="email2" id="email2" name="email2" placeholder="dupontjean@gmail.com">
                 </div>
             </div>

@@ -64,7 +64,7 @@ $logement = $info->fetchAll();
     <nav>
         <button id="un">Campings</button>
         <button id="deux">Gîtes</button>
-        <button id="trois">Chambres d'hôte</button>
+        <button id="trois">Chambres d'hôtes</button>
         <button id="quatre">Hôtels</button>
         <button id="cinq">Tous</button>
     </nav>

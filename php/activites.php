@@ -65,7 +65,7 @@ $activites = $info->fetchAll();
     <nav>
         <button>Sports</button>
         <button>Lieux culturels</button>
-        <button>festivals</button>
+        <button>Festivals</button>
         <button>Autres</button>
         <button>Tous</button>
     </nav>
