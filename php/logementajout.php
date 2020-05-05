@@ -127,20 +127,9 @@ header('Location: ../html/transitionco.html');
 </head>
 
 <body>
-    <header>
-        <div>
-            <a href="../index.php">
-                <img src="https://cdn.glitch.com/0e477c32-76f7-47e1-a071-2405796f3fa5%2Flogooo.png?v=1575622630122"
-                    alt="logo principal"></a>
-            <h1>DIJ'ON TRAVEL</h1>
-            <div>
-                <a href="deconnexion.php" class="co">Déconnexion</a>
-                <a href="profil.php" class="img"><img
-                        src="https://cdn.glitch.com/0e477c32-76f7-47e1-a071-2405796f3fa5%2Fprofil.png?v=1575622638108"
-                        alt="profil"></a>
-            </div>
-        </div>
-    </header>
+<?php
+include ('../includes/header.php');
+?>
     <main>
         <h1>Ajoutez une offre pour un logement</h1>
 
@@ -167,7 +156,7 @@ header('Location: ../html/transitionco.html');
                 <label for="file">Image <i>(renommez votre photo afin de ne pas avoir de caractères spéciaux)</i>:</label><input type="file" name="file" id="file" required>
             </div>
             <div>
-                <label for="type">*Catégorie :</label><select name="type" id="type">
+                <label for="type">Catégorie :</label><select name="type" id="type">
                     <option value="camping">Camping</option>
                     <option value="gite">Gîte</option>
                     <option value="chbrehote">Chambre d'hôte</option>
@@ -189,14 +178,9 @@ header('Location: ../html/transitionco.html');
         ?>
         </p>
     </main>
-    <footer>
-    <div>
-            <a href="">Qui sommes-nous ?</a>
-        </div>
-        <div>
-            <a href="">Nous contacter</a>
-        </div>
-    </footer>
+<?php
+include ('../includes/footer.php');
+?>
 
 </body>
 

@@ -14,14 +14,13 @@ $bdd = new PDO("mysql:host=$hostname;dbname=$dbname", $username, $password);
     <link rel="icon" href="./medias/logooo.png" />
     <link rel="stylesheet" href="style/global.css">
     <link rel="stylesheet" href="style/index.css">
-    <script src="script/index.js" async></script>
 </head>
 
 <body>
-    <header>
+<header>
         <div>
             <a href="index.php">
-                <img src="https://cdn.glitch.com/0e477c32-76f7-47e1-a071-2405796f3fa5%2Flogooo.png?v=1575622630122"
+                <img src="medias/logooo.png"
                     alt="logo principal"></a>
             <h1>DIJ'ON TRAVEL</h1>
             <div>
@@ -31,7 +30,7 @@ $bdd = new PDO("mysql:host=$hostname;dbname=$dbname", $username, $password);
         ?>
                 <a href="php/deconnexion.php" class="co">Déconnexion</a>
                 <a href="php/profil.php" class="img">
-                    <img src="https://cdn.glitch.com/0e477c32-76f7-47e1-a071-2405796f3fa5%2Fprofil.png?v=1575622638108"
+                    <img src="medias/profil.png"
                         alt="profil"></a>
                 <?php 
         }

@@ -4,16 +4,16 @@ Puis créez dans le dossiez php un fichier "config.php".
 
 Remplacez les ..... par vos identifiants dans le fichier "config.php" :
 
-<?php
+	<?php
 
-/*** mysql hostname ***/
-$hostname = '....';
+	/*** mysql hostname ***/
+	$hostname = '....';
 
-/*** mysql username ***/
-$username = '.....';
+	/*** mysql username ***/
+	$username = '.....';
 
-/*** mysql password ***/
-$password = '.....';
+	/*** mysql password ***/
+	$password = '.....';
 
-/*** dbname ***/
-$dbname = '.....';
+	/*** dbname ***/
+	$dbname = '.....';
